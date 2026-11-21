@@ -10,7 +10,7 @@ Precisam ser tomadas antes ou durante as fases indicadas. Cada decisão deve vir
 
 | # | Decisão | Opções | Recomendação inicial | Fase |
 |---|---|---|---|---|
-| DEC1 | Licença | MIT, GPL-3.0, nenhuma (privado) | MIT, se for público | 0 |
+| DEC1 | Licença | **Decidida.** MIT, com repositório público ([ADR 0003](decisoes/0003-licenca.md)) | — | 0 |
 | DEC2 | Linguagem | JavaScript puro, JS + JSDoc com `checkJs`, TypeScript | JS + JSDoc + `checkJs`: ganha verificação de tipos sem mudar a base | 1 |
 | DEC3 | **Integração com o Google Agenda** [C1] | **Decidida.** Sem OAuth ([ADR 0001](decisoes/0001-sem-oauth.md)). Manter o download do `.ics` (garantido) e a importação automática (melhor esforço, volta para o download quando falha) ([ADR 0002](decisoes/0002-download-e-importacao-automatica.md)) | — | 3 |
 | DEC4 | Navegadores | Só Chrome; Chrome + Edge; também Firefox | Chrome + Edge (mesmo pacote). Firefox só se houver demanda. | 3 |
@@ -18,12 +18,12 @@ Precisam ser tomadas antes ou durante as fases indicadas. Cada decisão deve vir
 | DEC6 | Distribuição | Modo desenvolvedor; Chrome Web Store (não listada/pública) | Web Store não listada | 6 |
 
 ## Fase 0 — Fundação do repositório
-- [ ] `git init`, branch `main`, primeiro commit com o estado atual (marco "protótipo") [A1].
+- [x] `git init`, branch `main`, primeiro commit com o estado atual (marco "protótipo") [A1].
 - [ ] Criar repositório remoto no GitHub e proteger a `main` (mudanças só via PR).
-- [ ] `.gitignore` (`node_modules/`, `dist/`, `*.zip`, `coverage/`), `.editorconfig`.
-- [ ] `LICENSE` conforme DEC1 [A5].
-- [ ] `CHANGELOG.md` (formato *Keep a Changelog*), iniciando em `2.1.0`.
-- [ ] Procurar os testes "com simulações" citados no README; se existirem em outro lugar, trazê-los para o repositório [A2].
+- [x] `.gitignore` (`node_modules/`, `dist/`, `*.zip`, `coverage/`), `.editorconfig`.
+- [x] `LICENSE` conforme DEC1 [A5].
+- [x] `CHANGELOG.md` (formato *Keep a Changelog*), iniciando em `2.1.0`.
+- [x] Procurar os testes "com simulações" citados no README; se existirem em outro lugar, trazê-los para o repositório [A2]. *Procurados em 2026-11-20: não foram encontrados. Os testes serão escritos do zero na fase 2.*
 
 **Pronto quando:** o projeto está versionado no GitHub com a `main` protegida.
 
