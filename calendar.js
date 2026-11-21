@@ -73,7 +73,8 @@
 
   // Texto da pagina sem a nossa caixa, para ler a confirmacao do Google.
   const textoDaPagina = () =>
-    [...document.body.children].filter((c) => c !== caixa).map((c) => c.innerText || "").join("\n");
+    [...document.body.children].filter((c) => c !== caixa)
+      .map((c) => /** @type {HTMLElement} */ (c).innerText || "").join("\n");
 
   function confirmacao() {
     const t = textoDaPagina();

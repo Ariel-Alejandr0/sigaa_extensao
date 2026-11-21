@@ -94,7 +94,7 @@
     const [h, mi] = e.hora.split(":").map(Number);
     const marco = new Date(Date.UTC(y, mo - 1, d, h, mi));
     if (norm(e.tipo) === "tarefa") // prazo de entrega: evento curto terminando no prazo
-      return { diaInteiro: false, ini: new Date(marco - 15 * 6e4), fim: marco };
+      return { diaInteiro: false, ini: new Date(+marco - 15 * 6e4), fim: marco };
     return { diaInteiro: false, ini: marco, fim: new Date(+marco + DURACAO_PADRAO_MIN * 6e4) };
   }
 

@@ -4,6 +4,15 @@ const ESCOLHER_CONTA = "https://accounts.google.com/AccountChooser";
 const PAGINA_IMPORTAR = "https://calendar.google.com/calendar/r/settings/export";
 const VALIDADE_MS = 15 * 60 * 1000;
 
+/** @typedef {{ tabId: number, ics: string, criadoEm: number }} Importacao */
+
+/** @returns {Promise<Importacao | undefined>} */
+async function lerImportacao() {
+  const { importacao } = /** @type {{ importacao?: Importacao }} */ (
+    await chrome.storage.local.get("importacao"));
+  return importacao;
+}
+
 async function iniciarImportacao(ics) {
   if (typeof ics !== "string" || !ics.startsWith("BEGIN:VCALENDAR"))
     throw new Error("Arquivo .ics inválido");
@@ -13,7 +22,7 @@ async function iniciarImportacao(ics) {
 }
 
 async function entregarParaAba(abaId) {
-  const { importacao } = await chrome.storage.local.get("importacao");
+  const importacao = await lerImportacao();
   if (!importacao || importacao.tabId !== abaId) return {};
   if (Date.now() - importacao.criadoEm > VALIDADE_MS) {
     await chrome.storage.local.remove("importacao");
@@ -26,7 +35,9 @@ async function entregarParaAba(abaId) {
 // Precisa ser autocontida: e serializada e injetada na pagina.
 function anexarNoMundoPrincipal(ics) {
   let n = 0;
-  for (const campo of document.querySelectorAll('input[type="file"]')) {
+  /** @type {NodeListOf<HTMLInputElement>} */
+  const campos = document.querySelectorAll('input[type="file"]');
+  for (const campo of campos) {
     try {
       const dt = new DataTransfer();
       dt.items.add(new File([ics], "avaliacoes_sigaa.ics", { type: "text/calendar" }));
@@ -34,7 +45,7 @@ function anexarNoMundoPrincipal(ics) {
       campo.dispatchEvent(new Event("input", { bubbles: true }));
       campo.dispatchEvent(new Event("change", { bubbles: true }));
       n++;
-    } catch (e) { /* tenta o proximo campo */ }
+    } catch { /* tenta o proximo campo */ }
   }
   return n;
 }
@@ -81,7 +92,7 @@ chrome.action.onClicked.addListener(async (aba) => {
 
 // Fechou a aba antes de terminar: descarta o arquivo guardado.
 chrome.tabs.onRemoved.addListener(async (abaId) => {
-  const { importacao } = await chrome.storage.local.get("importacao");
+  const importacao = await lerImportacao();
   if (importacao?.tabId === abaId) await chrome.storage.local.remove("importacao");
 });
 

@@ -23,6 +23,7 @@
     el.textContent = msg;
     el.className = tipo;
   };
+  /** @type {NodeListOf<HTMLButtonElement>} */
   const botoes = caixa.querySelectorAll("button:not(#sigaa-agenda-fechar)"); // fechar nunca trava
   const travar = (sim) => botoes.forEach((b) => (b.disabled = sim));
 
@@ -101,7 +102,7 @@
     try { return await chrome.runtime.sendMessage(msg); }
     catch (e) {
       if (/context invalidated/i.test(e.message))
-        throw new Error("A extensão foi atualizada. Recarregue esta página (F5) e tente de novo.");
+        throw new Error("A extensão foi atualizada. Recarregue esta página (F5) e tente de novo.", { cause: e });
       throw e;
     }
   }
