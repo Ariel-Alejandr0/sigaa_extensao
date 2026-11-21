@@ -7,7 +7,7 @@ O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e 
 ## [Não lançado]
 
 ### Adicionado
-- Repositório git, com a `main` alterada apenas via Pull Request.
+- Repositório git publicado no GitHub, com a `main` protegida: mudanças só via Pull Request.
 - `.gitignore`, `.editorconfig`, `LICENSE` (MIT) e este `CHANGELOG.md`.
 - Documentação para desenvolvimento em `docs/`: especificação, arquitetura, diagnóstico, roadmap e registros de decisão (ADR 0001 a 0003).
 

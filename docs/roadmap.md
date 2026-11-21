@@ -19,7 +19,7 @@ Precisam ser tomadas antes ou durante as fases indicadas. Cada decisão deve vir
 
 ## Fase 0 — Fundação do repositório
 - [x] `git init`, branch `main`, primeiro commit com o estado atual (marco "protótipo") [A1].
-- [ ] Criar repositório remoto no GitHub e proteger a `main` (mudanças só via PR).
+- [x] Criar repositório remoto no GitHub e proteger a `main` (mudanças só via PR).
 - [x] `.gitignore` (`node_modules/`, `dist/`, `*.zip`, `coverage/`), `.editorconfig`.
 - [x] `LICENSE` conforme DEC1 [A5].
 - [x] `CHANGELOG.md` (formato *Keep a Changelog*), iniciando em `2.1.0`.
