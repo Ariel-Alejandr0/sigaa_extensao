@@ -1,0 +1,7 @@
+node_modules/
+dist/
+coverage/
+package-lock.json
+
+# A documentação em Markdown é mantida à mão (o Prettier realinharia as tabelas).
+*.md

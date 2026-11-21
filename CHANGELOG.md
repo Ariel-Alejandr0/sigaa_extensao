@@ -9,7 +9,11 @@ O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e 
 ### Adicionado
 - Repositório git publicado no GitHub, com a `main` protegida: mudanças só via Pull Request.
 - `.gitignore`, `.editorconfig`, `LICENSE` (MIT) e este `CHANGELOG.md`.
-- Documentação para desenvolvimento em `docs/`: especificação, arquitetura, diagnóstico, roadmap e registros de decisão (ADR 0001 a 0003).
+- Documentação para desenvolvimento em `docs/`: especificação, arquitetura, diagnóstico, roadmap e registros de decisão (ADR 0001 a 0004).
+- Ferramentas de desenvolvimento: `package.json` com os scripts `lint`, `format`, `format:check` e `typecheck`; ESLint, Prettier e verificação de tipos do JavaScript com `checkJs` (ADR 0004).
+
+### Alterado
+- Código formatado com o Prettier e com anotações JSDoc onde a verificação de tipos precisava. Sem mudança de comportamento.
 
 ## [2.1.0] - 2026-11-13
 
