@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "SIGAA IFC → Google Agenda",
+  "version": "2.1.0",
+  "description": "Lê as avaliações e tarefas do SIGAA do IFC e importa no Google Agenda (você escolhe a conta do Google). Não usa a API do Google.",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://sig.ifc.edu.br/sigaa/*"
+      ],
+      "js": [
+        "parser.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://calendar.google.com/*"
+      ],
+      "js": [
+        "calendar.js"
+      ],
+      "css": [
+        "calendar.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "https://calendar.google.com/*"
+  ],
+  "action": {
+    "default_title": "SIGAA IFC → Google Agenda: reabrir a caixa",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

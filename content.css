@@ -1,0 +1,26 @@
+#sigaa-agenda-caixa {
+  position: fixed; right: 16px; bottom: 16px; z-index: 99999;
+  background: #fff; border: 1px solid #9fb3d6; border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2); padding: 10px; max-width: 280px;
+  font: 13px Arial, sans-serif; color: #222;
+}
+#sigaa-agenda-caixa[hidden] { display: none; }
+#sigaa-agenda-topo {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: -2px 0 8px; font-weight: bold; color: #1a5fb4;
+}
+#sigaa-agenda-caixa button {
+  display: block; width: 100%; margin: 0 0 6px; padding: 8px; cursor: pointer;
+  border: 0; border-radius: 6px; background: #1a5fb4; color: #fff; font-weight: bold;
+}
+#sigaa-agenda-caixa #sigaa-agenda-ics { background: #e8eef8; color: #1a5fb4; font-weight: normal; }
+#sigaa-agenda-caixa #sigaa-agenda-fechar {
+  display: block; width: 24px; height: 24px; margin: 0 -4px 0 8px; padding: 0;
+  background: transparent; color: #666; font-size: 18px; line-height: 22px; font-weight: normal;
+}
+#sigaa-agenda-caixa #sigaa-agenda-fechar:hover { background: #eee; color: #000; }
+#sigaa-agenda-caixa button:disabled { opacity: .5; cursor: wait; }
+#sigaa-agenda-status { min-height: 1em; }
+#sigaa-agenda-status.ok { color: #1e7b34; }
+#sigaa-agenda-status.erro { color: #b00020; }
+#sigaa-agenda-status.aviso { color: #8a6d00; }
