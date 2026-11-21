@@ -2,11 +2,16 @@
 // Nao depende de Chrome: recebe objetos Document (da pagina ou de DOMParser).
 (function (g) {
   const DURACAO_PADRAO_MIN = 100; // duracao de uma avaliacao com horario
-  const UTC_OFFSET_H = 3;         // Brasilia = UTC-3 (sem horario de verao)
+  const UTC_OFFSET_H = 3; // Brasilia = UTC-3 (sem horario de verao)
 
   const txt = (el) => (el ? el.textContent : "").replace(/\s+/g, " ").trim();
   const norm = (s) =>
-    s.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ").trim().toLowerCase();
+    s
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase();
   const pad = (n) => String(n).padStart(2, "0");
   const iso = (y, m, d) => `${y}-${pad(m)}-${pad(d)}`;
 
@@ -31,10 +36,19 @@
       const m = txt(tds[1]).match(/(\d{2})\/(\d{2})\/(\d{4})(?:\s+(\d{1,2}):(\d{2}))?/);
       const strong = tds[2].querySelector("strong");
       if (!m || !strong) continue;
-      let antes = "", depois = "", passouBr = false, passouStrong = false;
+      let antes = "",
+        depois = "",
+        passouBr = false,
+        passouStrong = false;
       for (const n of strong.parentNode.childNodes) {
-        if (n === strong) { passouStrong = true; continue; }
-        if (n.nodeName === "BR") { passouBr = true; continue; }
+        if (n === strong) {
+          passouStrong = true;
+          continue;
+        }
+        if (n.nodeName === "BR") {
+          passouBr = true;
+          continue;
+        }
         if (passouStrong) depois += " " + n.textContent;
         else if (!passouBr) antes += " " + n.textContent;
       }
@@ -77,7 +91,8 @@
       if (!antigo || (antigo.origem === "home" && e.origem === "turma")) mapa.set(k, e);
     }
     return [...mapa.values()].sort((a, b) =>
-      (a.data + (a.hora || "")).localeCompare(b.data + (b.hora || "")));
+      (a.data + (a.hora || "")).localeCompare(b.data + (b.hora || "")),
+    );
   }
 
   async function sha1hex(s) {
@@ -89,11 +104,16 @@
   function intervalo(e) {
     const [y, mo, d] = e.data.split("-").map(Number);
     if (!e.hora) {
-      return { diaInteiro: true, ini: new Date(Date.UTC(y, mo - 1, d)), fim: new Date(Date.UTC(y, mo - 1, d + 1)) };
+      return {
+        diaInteiro: true,
+        ini: new Date(Date.UTC(y, mo - 1, d)),
+        fim: new Date(Date.UTC(y, mo - 1, d + 1)),
+      };
     }
     const [h, mi] = e.hora.split(":").map(Number);
     const marco = new Date(Date.UTC(y, mo - 1, d, h, mi));
-    if (norm(e.tipo) === "tarefa") // prazo de entrega: evento curto terminando no prazo
+    if (norm(e.tipo) === "tarefa")
+      // prazo de entrega: evento curto terminando no prazo
       return { diaInteiro: false, ini: new Date(+marco - 15 * 6e4), fim: marco };
     return { diaInteiro: false, ini: marco, fim: new Date(+marco + DURACAO_PADRAO_MIN * 6e4) };
   }
@@ -103,21 +123,36 @@
 
   // Arquivo .ics (importado no Google Agenda)
   async function gerarIcs(eventos) {
-    const esc = (s) => s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
+    const esc = (s) =>
+      s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
     const dia = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");
-    const utc = (d) => new Date(+d + UTC_OFFSET_H * 36e5).toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z";
+    const utc = (d) =>
+      new Date(+d + UTC_OFFSET_H * 36e5).toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z";
     const agora = utc(new Date(Date.now() - UTC_OFFSET_H * 36e5));
-    const linhas = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//sigaa-agenda//PT-BR",
-      "CALSCALE:GREGORIAN", "X-WR-CALNAME:IFC - Avaliações"];
+    const linhas = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//sigaa-agenda//PT-BR",
+      "CALSCALE:GREGORIAN",
+      "X-WR-CALNAME:IFC - Avaliações",
+    ];
     for (const e of eventos) {
       const { diaInteiro, ini, fim } = intervalo(e);
-      linhas.push("BEGIN:VEVENT", `UID:${await sha1hex(chave(e))}@sigaa-agenda`, `DTSTAMP:${agora}`,
+      linhas.push(
+        "BEGIN:VEVENT",
+        `UID:${await sha1hex(chave(e))}@sigaa-agenda`,
+        `DTSTAMP:${agora}`,
         diaInteiro ? `DTSTART;VALUE=DATE:${dia(ini)}` : `DTSTART:${utc(ini)}`,
         diaInteiro ? `DTEND;VALUE=DATE:${dia(fim)}` : `DTEND:${utc(fim)}`,
         `SUMMARY:${esc(resumo(e))}`,
         `DESCRIPTION:${esc(`Importado do SIGAA\nMatéria: ${e.materia}\nTipo: ${e.tipo}`)}`,
-        "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:Lembrete", "TRIGGER:-P1D", "END:VALARM",
-        "END:VEVENT");
+        "BEGIN:VALARM",
+        "ACTION:DISPLAY",
+        "DESCRIPTION:Lembrete",
+        "TRIGGER:-P1D",
+        "END:VALARM",
+        "END:VEVENT",
+      );
     }
     linhas.push("END:VCALENDAR");
     return linhas.join("\r\n") + "\r\n";
@@ -131,11 +166,19 @@
     const form = doc.getElementById(m[1]);
     if (!form) throw new Error("Formulário da turma não encontrado: " + m[1]);
     const params = new URLSearchParams();
-    for (const inp of form.querySelectorAll("input[name]")) params.append(inp.name, inp.value || "");
+    for (const inp of form.querySelectorAll("input[name]"))
+      params.append(inp.name, inp.value || "");
     for (const [, k, v] of m[2].matchAll(/'([^']*)':'([^']*)'/g)) params.set(k, v);
     return { action: form.getAttribute("action"), params };
   }
 
-  g.SigaaParser = { norm, parseTurmas, parseAtividadesHome, parseAvaliacoesTurma, juntar,
-    gerarIcs, parametrosLinkJsf };
+  g.SigaaParser = {
+    norm,
+    parseTurmas,
+    parseAtividadesHome,
+    parseAvaliacoesTurma,
+    juntar,
+    gerarIcs,
+    parametrosLinkJsf,
+  };
 })(globalThis);

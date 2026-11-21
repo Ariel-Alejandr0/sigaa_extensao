@@ -30,23 +30,34 @@
   // ---------- fechar / reabrir ----------
   // O estado fica salvo: fechada continua fechada nas outras paginas do SIGAA ate o clique no icone.
   const lembrarFechada = (fechada) => {
-    try { chrome.storage.local.set({ caixaFechada: fechada }).catch(() => {}); } catch { /* extensao recarregada */ }
+    try {
+      chrome.storage.local.set({ caixaFechada: fechada }).catch(() => {});
+    } catch {
+      /* extensao recarregada */
+    }
   };
   caixa.querySelector("#sigaa-agenda-fechar").addEventListener("click", () => {
     caixa.hidden = true;
     lembrarFechada(true);
   });
   try {
-    chrome.storage.local.get("caixaFechada")
-      .then(({ caixaFechada }) => { caixa.hidden = !!caixaFechada; })
-      .catch(() => { caixa.hidden = false; });
+    chrome.storage.local
+      .get("caixaFechada")
+      .then(({ caixaFechada }) => {
+        caixa.hidden = !!caixaFechada;
+      })
+      .catch(() => {
+        caixa.hidden = false;
+      });
     chrome.runtime.onMessage.addListener((msg, _remetente, responder) => {
       if (msg?.tipo !== "mostrarCaixa") return; // enviado pelo background ao clicar no icone
       caixa.hidden = false;
       lembrarFechada(false);
       responder({ ok: true });
     });
-  } catch { caixa.hidden = false; } // extensao recarregada: mostra assim mesmo (o envio avisa o que fazer)
+  } catch {
+    caixa.hidden = false;
+  } // extensao recarregada: mostra assim mesmo (o envio avisa o que fazer)
 
   // ---------- acesso ao SIGAA ----------
   async function paraDocumento(res) {
@@ -57,8 +68,11 @@
       cs = cabeca.match(/charset=["']?([\w-]+)/i)?.[1] || "iso-8859-1";
     }
     let html;
-    try { html = new TextDecoder(cs.trim()).decode(buf); }
-    catch { html = new TextDecoder("iso-8859-1").decode(buf); }
+    try {
+      html = new TextDecoder(cs.trim()).decode(buf);
+    } catch {
+      html = new TextDecoder("iso-8859-1").decode(buf);
+    }
     const doc = new DOMParser().parseFromString(html, "text/html");
     if (doc.querySelector('input[name="user.login"]'))
       throw new Error("Sua sessão do SIGAA expirou. Faça login de novo e tente outra vez.");
@@ -75,7 +89,9 @@
     if (!link) throw new Error("Turma não encontrada na página inicial");
     const { action, params } = P.parametrosLinkJsf(homeDoc, link);
     const res = await fetch(new URL(action, location.origin), {
-      method: "POST", body: params, credentials: "include",
+      method: "POST",
+      body: params,
+      credentials: "include",
     });
     return paraDocumento(res);
   }
@@ -99,10 +115,13 @@
   async function pedirAoBackground(msg) {
     if (!globalThis.chrome?.runtime?.id)
       throw new Error("A extensão foi atualizada. Recarregue esta página (F5) e tente de novo.");
-    try { return await chrome.runtime.sendMessage(msg); }
-    catch (e) {
+    try {
+      return await chrome.runtime.sendMessage(msg);
+    } catch (e) {
       if (/context invalidated/i.test(e.message))
-        throw new Error("A extensão foi atualizada. Recarregue esta página (F5) e tente de novo.", { cause: e });
+        throw new Error("A extensão foi atualizada. Recarregue esta página (F5) e tente de novo.", {
+          cause: e,
+        });
       throw e;
     }
   }
@@ -111,30 +130,48 @@
 
   async function executar(acao) {
     travar(true);
-    try { await acao(); }
-    catch (e) {
+    try {
+      await acao();
+    } catch (e) {
       status("Erro: " + e.message, "erro");
       console.error("[SIGAA Agenda]", e);
-    } finally { travar(false); }
+    } finally {
+      travar(false);
+    }
   }
 
-  caixa.querySelector("#sigaa-agenda-sync").addEventListener("click", () => executar(async () => {
-    const eventos = await coletar();
-    if (!eventos.length) { status("Nenhuma avaliação encontrada.", "aviso"); return; }
-    const ics = await P.gerarIcs(eventos);
-    const r = await pedirAoBackground({ tipo: "importarNoGoogle", ics });
-    if (r?.erro) throw new Error(r.erro);
-    status(`${nEventos(eventos.length)} pronto(s). Escolha a conta do Google na nova aba.`, "ok");
-  }));
+  caixa.querySelector("#sigaa-agenda-sync").addEventListener("click", () =>
+    executar(async () => {
+      const eventos = await coletar();
+      if (!eventos.length) {
+        status("Nenhuma avaliação encontrada.", "aviso");
+        return;
+      }
+      const ics = await P.gerarIcs(eventos);
+      const r = await pedirAoBackground({ tipo: "importarNoGoogle", ics });
+      if (r?.erro) throw new Error(r.erro);
+      status(`${nEventos(eventos.length)} pronto(s). Escolha a conta do Google na nova aba.`, "ok");
+    }),
+  );
 
-  caixa.querySelector("#sigaa-agenda-ics").addEventListener("click", () => executar(async () => {
-    const eventos = await coletar();
-    if (!eventos.length) { status("Nenhuma avaliação encontrada.", "aviso"); return; }
-    const ics = await P.gerarIcs(eventos);
-    const url = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
-    const a = Object.assign(document.createElement("a"), { href: url, download: "avaliacoes_sigaa.ics" });
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 5000);
-    status(`${nEventos(eventos.length)} salvo(s) em avaliacoes_sigaa.ics.`, "ok");
-  }));
+  caixa.querySelector("#sigaa-agenda-ics").addEventListener("click", () =>
+    executar(async () => {
+      const eventos = await coletar();
+      if (!eventos.length) {
+        status("Nenhuma avaliação encontrada.", "aviso");
+        return;
+      }
+      const ics = await P.gerarIcs(eventos);
+      const url = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+      const a = Object.assign(document.createElement("a"), {
+        href: url,
+        download: "avaliacoes_sigaa.ics",
+      });
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+      status(`${nEventos(eventos.length)} salvo(s) em avaliacoes_sigaa.ics.`, "ok");
+    }),
+  );
 })();

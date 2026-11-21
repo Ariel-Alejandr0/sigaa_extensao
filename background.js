@@ -9,7 +9,8 @@ const VALIDADE_MS = 15 * 60 * 1000;
 /** @returns {Promise<Importacao | undefined>} */
 async function lerImportacao() {
   const { importacao } = /** @type {{ importacao?: Importacao }} */ (
-    await chrome.storage.local.get("importacao"));
+    await chrome.storage.local.get("importacao")
+  );
   return importacao;
 }
 
@@ -45,7 +46,9 @@ function anexarNoMundoPrincipal(ics) {
       campo.dispatchEvent(new Event("input", { bubbles: true }));
       campo.dispatchEvent(new Event("change", { bubbles: true }));
       n++;
-    } catch { /* tenta o proximo campo */ }
+    } catch {
+      /* tenta o proximo campo */
+    }
   }
   return n;
 }
@@ -54,7 +57,10 @@ async function anexarNaPagina(abaId) {
   const { ics } = await entregarParaAba(abaId); // so a aba da importacao pode pedir
   if (!ics) return { campos: 0 };
   const [r] = await chrome.scripting.executeScript({
-    target: { tabId: abaId }, world: "MAIN", func: anexarNoMundoPrincipal, args: [ics],
+    target: { tabId: abaId },
+    world: "MAIN",
+    func: anexarNoMundoPrincipal,
+    args: [ics],
   });
   return { campos: r?.result || 0 };
 }
@@ -85,7 +91,10 @@ chrome.action.onClicked.addListener(async (aba) => {
   } catch {
     chrome.action.setBadgeBackgroundColor({ tabId: aba.id, color: "#b00020" });
     chrome.action.setBadgeText({ tabId: aba.id, text: "!" });
-    chrome.action.setTitle({ tabId: aba.id, title: "Abra a página inicial do SIGAA (Portal do Discente) para usar a extensão" });
+    chrome.action.setTitle({
+      tabId: aba.id,
+      title: "Abra a página inicial do SIGAA (Portal do Discente) para usar a extensão",
+    });
     setTimeout(() => chrome.action.setBadgeText({ tabId: aba.id, text: "" }).catch(() => {}), 4000);
   }
 });

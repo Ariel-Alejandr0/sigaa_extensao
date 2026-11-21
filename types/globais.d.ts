@@ -23,7 +23,11 @@ interface SigaaParserApi {
   norm(s: string): string;
   parseTurmas(doc: Document): SigaaTurma[];
   parseAtividadesHome(doc: Document): SigaaEvento[];
-  parseAvaliacoesTurma(doc: Document, materia: string, inicioSemestre: string | null): SigaaEvento[];
+  parseAvaliacoesTurma(
+    doc: Document,
+    materia: string,
+    inicioSemestre: string | null,
+  ): SigaaEvento[];
   juntar(eventos: SigaaEvento[]): SigaaEvento[];
   gerarIcs(eventos: SigaaEvento[]): Promise<string>;
   parametrosLinkJsf(doc: Document, link: Element): { action: string; params: URLSearchParams };

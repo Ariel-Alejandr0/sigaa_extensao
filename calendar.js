@@ -17,8 +17,11 @@
 
   // Esta aba foi aberta pela extensao? Se nao, nao mexe em nada.
   let pedido;
-  try { pedido = await chrome.runtime.sendMessage({ tipo: "calendarioPronto" }); }
-  catch { return; }
+  try {
+    pedido = await chrome.runtime.sendMessage({ tipo: "calendarioPronto" });
+  } catch {
+    return;
+  }
   if (!pedido?.ics) return;
   const ics = pedido.ics;
 
@@ -41,8 +44,13 @@
     b.textContent = "Baixar .ics para importar à mão";
     b.addEventListener("click", () => {
       const url = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
-      const a = Object.assign(document.createElement("a"), { href: url, download: "avaliacoes_sigaa.ics" });
-      document.body.appendChild(a); a.click(); a.remove();
+      const a = Object.assign(document.createElement("a"), {
+        href: url,
+        download: "avaliacoes_sigaa.ics",
+      });
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
       setTimeout(() => URL.revokeObjectURL(url), 5000);
     });
     acoes.appendChild(b);
@@ -60,21 +68,26 @@
     return null;
   }
 
-  function clicar(el) { // alguns botoes do Google reagem a mousedown/mouseup, nao so a click
+  function clicar(el) {
+    // alguns botoes do Google reagem a mousedown/mouseup, nao so a click
     for (const tipo of ["mousedown", "mouseup", "click"])
       el.dispatchEvent(new MouseEvent(tipo, { bubbles: true, cancelable: true, view: window }));
   }
 
   const rotuloDe = (b) => txt(b) || b.getAttribute("aria-label") || "";
   const todosImportar = () =>
-    [...document.querySelectorAll('button, [role="button"]')].filter((b) => /^(importar|import)$/i.test(rotuloDe(b)));
+    [...document.querySelectorAll('button, [role="button"]')].filter((b) =>
+      /^(importar|import)$/i.test(rotuloDe(b)),
+    );
   const habilitado = (b) => !b.disabled && b.getAttribute("aria-disabled") !== "true";
   const botaoImportar = () => todosImportar().find(habilitado);
 
   // Texto da pagina sem a nossa caixa, para ler a confirmacao do Google.
   const textoDaPagina = () =>
-    [...document.body.children].filter((c) => c !== caixa)
-      .map((c) => /** @type {HTMLElement} */ (c).innerText || "").join("\n");
+    [...document.body.children]
+      .filter((c) => c !== caixa)
+      .map((c) => /** @type {HTMLElement} */ (c).innerText || "")
+      .join("\n");
 
   function confirmacao() {
     const t = textoDaPagina();
@@ -99,12 +112,23 @@
   async function anexar() {
     const pontos = (i) => (/ics|vcs|csv|calendar/i.test(i.accept || "") ? 1 : 0);
     for (let volta = 0; volta < 3; volta++) {
-      const campos = [...document.querySelectorAll('input[type="file"]')].sort((a, b) => pontos(b) - pontos(a));
+      const campos = [...document.querySelectorAll('input[type="file"]')].sort(
+        (a, b) => pontos(b) - pontos(a),
+      );
       for (const campo of campos) {
-        try { anexarIsolado(campo); } catch (e) { console.warn("[SIGAA Agenda] campo recusou o arquivo:", e); continue; }
+        try {
+          anexarIsolado(campo);
+        } catch (e) {
+          console.warn("[SIGAA Agenda] campo recusou o arquivo:", e);
+          continue;
+        }
         if (await aceito(1500)) return true;
       }
-      try { await chrome.runtime.sendMessage({ tipo: "anexarNaPagina" }); } catch { /* segue */ }
+      try {
+        await chrome.runtime.sendMessage({ tipo: "anexarNaPagina" });
+      } catch {
+        /* segue */
+      }
       if (await aceito(2000)) return true;
       await dormir(1000);
     }
@@ -115,10 +139,13 @@
     // 1) Ir para a pagina de importacao, mantendo a conta (/u/N/) que o Google abriu.
     if (!/\/settings\/export/.test(location.pathname)) {
       const tentativas = +(sessionStorage.getItem("sigaaAgendaRedir") || 0);
-      if (tentativas >= 3) return falha("Não consegui abrir a página de importação do Google Agenda.");
+      if (tentativas >= 3)
+        return falha("Não consegui abrir a página de importação do Google Agenda.");
       sessionStorage.setItem("sigaaAgendaRedir", String(tentativas + 1));
-      const u = location.pathname.match(/\/calendar\/u\/(\d+)\//)?.[1]
-        ?? new URLSearchParams(location.search).get("authuser") ?? "0";
+      const u =
+        location.pathname.match(/\/calendar\/u\/(\d+)\//)?.[1] ??
+        new URLSearchParams(location.search).get("authuser") ??
+        "0";
       msg("Abrindo a página de importação…");
       location.replace(`/calendar/u/${u}/r/settings/export`);
       return;
@@ -137,15 +164,21 @@
     await esperar(() => todosImportar()[0], 15000);
     await dormir(1500);
     if (!(await anexar())) {
-      console.warn("[SIGAA Agenda] Google nao aceitou o arquivo. Campos de arquivo:",
+      console.warn(
+        "[SIGAA Agenda] Google nao aceitou o arquivo. Campos de arquivo:",
         [...document.querySelectorAll('input[type="file"]')].map((i) => i.outerHTML),
-        "Botoes Importar:", todosImportar().map((b) => b.outerHTML.slice(0, 300)));
-      return falha("O Google não aceitou o anexo automático. Baixe o .ics, clique em “Selecionar arquivo no seu computador”, escolha-o e clique em Importar.");
+        "Botoes Importar:",
+        todosImportar().map((b) => b.outerHTML.slice(0, 300)),
+      );
+      return falha(
+        "O Google não aceitou o anexo automático. Baixe o .ics, clique em “Selecionar arquivo no seu computador”, escolha-o e clique em Importar.",
+      );
     }
 
     // 3) Clicar em "Importar".
     const botao = await esperar(botaoImportar, 10000);
-    if (!botao) return falha("O arquivo foi anexado, mas o botão Importar não habilitou. Clique nele à mão.");
+    if (!botao)
+      return falha("O arquivo foi anexado, mas o botão Importar não habilitou. Clique nele à mão.");
     clicar(botao);
     chrome.runtime.sendMessage({ tipo: "calendarioConcluido" }).catch(() => {});
 
