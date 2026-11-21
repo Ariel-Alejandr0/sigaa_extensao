@@ -1,0 +1,16 @@
+# Dependências
+node_modules/
+
+# Saída de build e pacotes
+dist/
+*.zip
+
+# Relatórios de teste
+coverage/
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
