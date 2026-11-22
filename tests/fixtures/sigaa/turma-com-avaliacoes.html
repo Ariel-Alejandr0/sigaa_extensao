@@ -1,0 +1,1480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class=" ext-strict yvlrkfs idc0_350"><head><meta charset="utf-8">
+
+		
+		
+		
+		
+		<title>SIGAA - Sistema Integrado de Gestão de Atividades Acadêmicas</title>
+		
+		
+		
+
+ 		
+ 		
+		    
+		
+		  
+
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+
+		
+ 		
+
+	    
+		
+		
+		
+		
+		
+		
+
+	
+	
+		
+		
+		
+		
+		
+		
+	
+
+
+		
+
+		
+
+		
+		
+
+        
+        
+		
+		
+		
+		
+		
+		
+        
+		
+		
+		
+		
+
+						
+		
+		
+		
+		
+		
+    </head>
+
+	<body onload="exibirHora()" id="ext-gen6" class="ext-gecko ext-linux yui-skin-sam" cz-shortcut-listen="true">
+		<div id="baseLayout" style="width: 100%; position: relative; height: 636px; overflow: hidden;" class="ui-layout-container">
+		
+		<div id="dialog" style="display: none;">
+			<br><br>
+			<p>Por favor, aguarde enquanto a página é gerada ...</p><br><br>
+			<img>
+		</div>
+		<div id="mascara" style="width: 2000px; height: 2000px; display: none;"></div>
+		
+		
+	
+		
+			
+		
+	
+		
+		
+			
+		
+		
+		
+		
+		
+	
+		
+		
+
+
+<input type="submit" id="bVisualizarPerfil" style="display:none;" onclick="dialogPerfil.show();return false;">
+
+
+
+		
+		
+		<input type="submit" id="bVisualizarPerfil" style="display:none;" onclick="">
+
+
+
+		
+		
+		
+
+		
+
+
+<input id="bVisualizarParecerNee" type="submit" name="bVisualizarParecerNee" value="" style="display:none;"><div id="panelNee" style="display: none;"><input autocomplete="off" id="panelNeeOpenedState" name="panelNeeOpenedState" type="hidden"><div class="rich-modalpanel panelPerfil" id="panelNeeContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="panelNeeDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="panelNeeFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="panelNeeCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="panelNeeShadowDiv"></div><div class=" rich-mpnl-content" id="panelNeeContentDiv"><div class="rich-mpnl-text rich-mpnl-controls "><img id="hidelink_parecer" class="hidelink"></div><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="panelNeeContentTable" style="width: 500px;height: 1px;"><tbody><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="panelNeeHeader" style="white-space: nowrap; cursor: move;">Parecer sobre as Necessidades Educacionais Específicas do Discente</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+	
+		
+	
+	
+		
+	
+
+	<div style="width:100%; height: 350px; overflow: auto;">
+		<table width="100%">
+			<tbody><tr>
+				
+				<td>
+					<strong style="font-weight:bold;"></strong>
+					<h1>Dados do Discente</h1>
+					<strong style="font-weight:bold;">Curso:</strong> <em> </em><br>
+					<strong style="font-weight:bold;">Matrícula:</strong> <em></em> <br>
+					<strong style="font-weight:bold;">Usuário:</strong> <em>Sem cadastro no sistema </em><br>
+					<strong style="font-weight:bold;">E-mail:</strong> <em>Desconhecido</em>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h1>Tipos de Necessidades Educacionais Específicas </h1>
+		 			
+				</td>
+			</tr>	
+			<tr>
+				<td> 
+					<h1>Parecer da AEE a respeito da Necessidade Educacional do Aluno</h1>
+					<span id="parecerComissao"></span>
+<form id="parecerpdf" name="parecerpdf" method="post" action="/sigaa/ava/index.jsf" enctype="multipart/form-data">
+<input type="hidden" name="parecerpdf" value="parecerpdf">
+
+				 			<a href="#" target="_blank" dir="rtl">
+								
+							</a>
+				 		<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2">
+</form>
+					
+					<br><br>
+				</td>			
+			</tr>
+			<tr>				
+				<td>
+					<a href="#" id="j_id_jsp_1236623656_52" name="j_id_jsp_1236623656_52" onclick="enviarMensagem();;A4J.AJAX.Submit(null,event,{'similarityGroupingId':'j_id_jsp_1236623656_52','parameters':{'j_id_jsp_1236623656_52':'j_id_jsp_1236623656_52'} ,'containerId':'j_id_jsp_1236623656_0','actionUrl':'/sigaa/ava/index.jsf'} );return false;">
+						<img alt="Enviar Mensagem Para a AEE" title="Enviar Mensagem Para a AEE"> 
+						Enviar Mensagem para a AEE 
+					</a>
+				</td>
+			</tr>	
+		</tbody></table>
+	</div>
+	<div style="width:100%;text-align:center;height:25px;background:#DFE8F6;vertical-align:middle;padding-top:5px;">
+		<input id="bFecharNee" type="submit" name="bFecharNee" value="Fechar">
+	</div>
+</td></tr></tbody></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="panelNeeCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="panelNeeLastHref"></button></div></div></div><input id="btEmailNee" type="submit" name="btEmailNee" value="" style="display:none;"><div id="panelEmailNee" style="display: none;"><input autocomplete="off" id="panelEmailNeeOpenedState" name="panelEmailNeeOpenedState" type="hidden"><div class="rich-modalpanel panelPerfil" id="panelEmailNeeContainer" style="position: absolute; display: none; z-index: 100; background-color: inherit;"><div class="rich-mpnl-mask-div-opaque rich-mpnl-mask-div" id="panelEmailNeeDiv" style="z-index: -1;"><button class="rich-mpnl-button" id="panelEmailNeeFirstHref"></button></div><div class="rich-mpnl-panel"><div class="rich-mp-container" id="panelEmailNeeCDiv" style="position: absolute; left: 0px; top: 0px; z-index: 9;"><div class="rich-mpnl-shadow" id="panelEmailNeeShadowDiv"></div><div class=" rich-mpnl-content" id="panelEmailNeeContentDiv" style="background:#DFE8F6;"><div class="rich-mpnl-text rich-mpnl-controls "><img id="hidelink_email" class="hidelink"></div><table border="0" cellpadding="0" cellspacing="0" class="rich-mp-content-table" id="panelEmailNeeContentTable" style="width: 500px;height: 1px;"><tbody><tr style="height: 1%;"><td class="rich-mpnl-header-cell"><div class="rich-mpnl-text rich-mpnl-header " id="panelEmailNeeHeader" style="white-space: nowrap; cursor: move;">
+			Enviar mensagem para a AEE</div></td></tr><tr style="height: 99%"><td class="rich-mpnl-body" valign="top">
+<form id="form_nee" name="form_nee" method="post" action="/sigaa/ava/index.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="form_nee" value="form_nee">
+
+		<div style="width:100%; height: 175px; overflow: auto; background:#DFE8F6;">
+			<table style="width: 100%">
+				<tbody>
+					<tr>
+						<th rowspan="2"><img style="padding:10px;"></th>
+						<th><strong style="font-weight:bold; vertical-align:top; padding:10px;">Destinatário:</strong></th>
+						<td><em style="vertical-align:top;">inclusaoediversidade@ifc.edu.br</em></td>
+					</tr>
+					<tr>
+						<th style="text-align: left;"><strong style="font-weight:bold; vertical-align:top; padding:10px;">Título:</strong></th>
+						<td><input id="form_nee:titulo" type="text" name="form_nee:titulo" maxlength="260" size="80"></td>
+					</tr>	
+					<tr>
+						<td colspan="3"><textarea id="form_nee:conteudo" name="form_nee:conteudo" rows="8" style="width:99%; resize: none"></textarea></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<input id="form_nee:btEnviarEmailNee" type="submit" name="form_nee:btEnviarEmailNee" value="Enviar" onclick="return validarDados();" style="display:none;"><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2">
+</form>
+	
+		
+	
+	
+		
+	
+	
+	<div style="width:100%;text-align:center;height:10px;vertical-align:middle;">
+		<input id="btEnviarEmailNee2" type="submit" name="btEnviarEmailNee2" value="Enviar" onclick="document.getElementById('form_nee:btEnviarEmailNee').click();"><input id="btFecharEmailNee" type="submit" name="btFecharEmailNee" value="Fechar">
+		
+	</div>
+</td></tr></tbody></table></div></div></div><div class="rich-mpnl-mask-div rich-mpnl-mask-div-transparent" id="panelEmailNeeCursorDiv" style="z-index: -200;"><button class="rich-mpnl-button" id="panelEmailNeeLastHref"></button></div></div></div>
+<form id="formMenu" name="formMenu" method="post" action="/sigaa/ava/index.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="formMenu" value="formMenu">
+
+		
+	<div id="barraEsquerda" class="ui-layout-west ui-layout-pane ui-layout-pane-west" style="position: absolute; margin: 0px; inset: 53px auto 30px 0px; height: 551px; z-index: 1; width: 188px; visibility: visible; display: block;">
+	
+		<table style="width:100%;border-bottom:1px solid #99BBE8;" cellspacing="0"><tbody><tr><td style="color:#15428B;background:url('/sigaa/ava/img/painel_bg.png');height:24px;text-align:center;font-weight:bold;font-size:8pt;">Menu Turma Virtual</td></tr></tbody></table>
+		
+		<div class="rich-panelbar rich-panelbar-b " id="formMenu:j_id_jsp_1236623656_71" style="padding: 0px; width: 100%;"><div class="rich-panelbar rich-panelbar-interior " id="formMenu:j_id_jsp_1236623656_72"><div class="rich-panelbar-header  itemMenuHeaderTurma" style="display: none;">Turma</div><div class="rich-panelbar-header-act  itemMenuHeaderTurma  " style="">Turma</div><div class="rich-panelbar-content-exterior" style="display: block; width: 100%; overflow: auto; height: 100%;"><table cellpadding="0" cellspacing="0" style="" width="100%"><tbody><tr><td class="rich-panelbar-content  " style=";overflow:hidden;"><a href="#" onclick="var a=function(){return prevenirDuploClique();};var b=function(){if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_73':'formMenu:j_id_jsp_1236623656_73'},'');}return false};return (a()==false) ? false : b();">
+					<div class="itemMenu">Principal</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_76':'formMenu:j_id_jsp_1236623656_76'},'');}return false">
+						<div class="itemMenu">Gerenciar Perfil</div>
+					</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_77':'formMenu:j_id_jsp_1236623656_77'},'');}return false">
+                						
+							<div class="itemMenu">Plano de Ensino</div>
+                							
+						</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_83':'formMenu:j_id_jsp_1236623656_83'},'');}return false">
+					<div class="itemMenu">Participantes</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_84':'formMenu:j_id_jsp_1236623656_84'},'');}return false">
+					<div class="itemMenu">Visualizar Programa</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_86':'formMenu:j_id_jsp_1236623656_86'},'');}return false">
+					<div class="itemMenu">Fóruns</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_89':'formMenu:j_id_jsp_1236623656_89'},'');}return false">
+					<div class="itemMenu">Notícias</div>
+				</a></td></tr></tbody></table></div></div><div class="rich-panelbar rich-panelbar-interior " id="formMenu:j_id_jsp_1236623656_97"><div class="rich-panelbar-header  itemMenuHeaderAlunos" style=";">Alunos</div><div class="rich-panelbar-header-act  itemMenuHeaderAlunos  " style=";;;;display: none;">Alunos</div><div class="rich-panelbar-content-exterior" style="display: none; width: 100%; overflow: auto; height: 0px;"><table cellpadding="0" cellspacing="0" style="height: 100%;" width="100%"><tbody><tr><td class="rich-panelbar-content  " style=";overflow:hidden;"><a href="#" onclick="var a=function(){return prevenirDuploClique();};var b=function(){if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_100':'formMenu:j_id_jsp_1236623656_100'},'');}return false};return (a()==false) ? false : b();">
+					<div class="itemMenu">Frequência</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_101':'formMenu:j_id_jsp_1236623656_101'},'');}return false">
+					<div class="itemMenu">Ver Grupo</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_102':'formMenu:j_id_jsp_1236623656_102'},'');}return false">
+					<div class="itemMenu">Ver Notas</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_103':'formMenu:j_id_jsp_1236623656_103'},'');}return false">
+                    <div class="itemMenu">Recuperação Paralela</div>
+                </a></td></tr></tbody></table></div></div><div class="rich-panelbar rich-panelbar-interior " id="formMenu:j_id_jsp_1236623656_121"><div class="rich-panelbar-header  itemMenuHeaderMateriais" style=";">Materiais</div><div class="rich-panelbar-header-act  itemMenuHeaderMateriais  " style=";;;;display: none;">Materiais</div><div class="rich-panelbar-content-exterior" style="display: none; width: 100%; overflow: auto; height: 0px;"><table cellpadding="0" cellspacing="0" style="height: 100%;" width="100%"><tbody><tr><td class="rich-panelbar-content  " style=";overflow:hidden;"><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_122':'formMenu:j_id_jsp_1236623656_122'},'');}return false">
+					<div class="itemMenu">Conteúdo/Página web</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_126':'formMenu:j_id_jsp_1236623656_126'},'');}return false">
+					<div class="itemMenu">Referências</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_128':'formMenu:j_id_jsp_1236623656_128'},'');}return false">
+					<div class="itemMenu">Vídeos</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_129':'formMenu:j_id_jsp_1236623656_129'},'');}return false">
+					<div class="itemMenu">Arquivos</div>
+				</a></td></tr></tbody></table></div></div><div class="rich-panelbar rich-panelbar-interior " id="formMenu:j_id_jsp_1236623656_130"><div class="rich-panelbar-header  itemMenuHeaderAtividades" style=";">Atividades</div><div class="rich-panelbar-header-act  itemMenuHeaderAtividades  " style=";;;;display: none;">Atividades</div><div class="rich-panelbar-content-exterior" style="display: none; width: 100%; overflow: auto; height: 0px;"><table cellpadding="0" cellspacing="0" style="height: 100%;" width="100%"><tbody><tr><td class="rich-panelbar-content  " style=";overflow:hidden;"><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_131':'formMenu:j_id_jsp_1236623656_131'},'');}return false">
+					<div class="itemMenu">Avaliações</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_132':'formMenu:j_id_jsp_1236623656_132'},'');}return false">
+					<div class="itemMenu">Enquetes</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_133':'formMenu:j_id_jsp_1236623656_133'},'');}return false">
+					<div class="itemMenu">Tarefas</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_135':'formMenu:j_id_jsp_1236623656_135'},'');}return false">
+					<div class="itemMenu">Questionários</div>
+				</a></td></tr></tbody></table></div></div><div class="rich-panelbar rich-panelbar-interior " id="formMenu:j_id_jsp_1236623656_146"><div class="rich-panelbar-header  itemMenuHeaderRelatorios" style=";">Estatística</div><div class="rich-panelbar-header-act  itemMenuHeaderRelatorios  " style=";;;;display: none;">Estatística</div><div class="rich-panelbar-content-exterior" style="display: none; width: 100%; overflow: auto; height: 0px;"><table cellpadding="0" cellspacing="0" style="height: 100%;" width="100%"><tbody><tr><td class="rich-panelbar-content  " style=";overflow:hidden;"><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_147':'formMenu:j_id_jsp_1236623656_147'},'');}return false">
+					<div class="itemMenu">Situação dos Discentes</div>
+				</a><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_155':'formMenu:j_id_jsp_1236623656_155'},'');}return false">
+					<div class="itemMenu">Linha do Tempo</div>
+				</a></td></tr></tbody></table></div></div><div class="rich-panelbar rich-panelbar-interior " id="formMenu:j_id_jsp_1236623656_156"><div class="rich-panelbar-header  itemMenuHeaderAjuda" style=";">Ajuda</div><div class="rich-panelbar-header-act  itemMenuHeaderAjuda  " style=";;;;display: none;">Ajuda</div><div class="rich-panelbar-content-exterior" style="display: none; width: 100%; overflow: auto; height: 0px;"><table cellpadding="0" cellspacing="0" style="height: 100%;" width="100%"><tbody><tr><td class="rich-panelbar-content  " style=";overflow:hidden;"><a href="#" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formMenu'),{'formMenu:j_id_jsp_1236623656_157':'formMenu:j_id_jsp_1236623656_157'},'_BLANK');}return false">
+					<div class="itemMenu">Manual da Turma Virtual</div>
+				</a></td></tr></tbody></table></div></div><input autocomplete="off" id="formMenu:j_id_jsp_1236623656_71_panelBarInput" name="formMenu:j_id_jsp_1236623656_71" type="hidden" value="formMenu:j_id_jsp_1236623656_72"></div>
+	</div>
+
+	
+--<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2">
+</form>
+
+		
+		
+		
+
+
+<div id="barraDireita" class="ui-layout-east ui-layout-pane ui-layout-pane-east" style="position: absolute; margin: 0px; inset: 53px 0px 30px auto; height: 551px; z-index: 1; width: 223px; visibility: visible; display: block;">
+	<table style="width:100%;border-bottom:1px solid #99BBE8;" cellspacing="0"><tbody><tr><td style="color:#15428B;background:url('/sigaa/ava/img/painel_bg.png');height:24px;text-align:right;font-weight:bold;font-size:8pt;padding-right:5px;" id="toggleDireita" class="ui-layout-button-toggle ui-layout-button-toggle-east"><img></td></tr></tbody></table>
+	
+	
+
+
+<div class="rich-stglpanel blocoDireita" id="j_id_jsp_1236623656_159"><form id="j_id_jsp_1236623656_159:_form" name="j_id_jsp_1236623656_159:_form" method="post" style="margin:0; padding:0; display: inline;" action="/sigaa/ava/index.jsf"><div class="rich-stglpanel-header headerBloco" id="j_id_jsp_1236623656_159_header" onclick="SimpleTogglePanelManager.toggleOnClient(event,'j_id_jsp_1236623656_159');"><div class="rich-stglpanel-marker"><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_159_switch_on"><img></div><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_159_switch_off" style="display: none"><img></div></div>Andamento das Aulas&nbsp;</div><div style="display: none;"><input autocomplete="off" id="j_id_jsp_1236623656_159_input" name="j_id_jsp_1236623656_159" type="hidden" value="true"></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2"></form><div class="rich-stglpanel-body " id="j_id_jsp_1236623656_159_body">
+	
+		
+	
+	
+		
+	
+
+	
+
+	
+		
+		
+
+		
+		
+		
+			<div>
+				Aulas (Ministradas/Total): <i>60 / 72</i>
+			</div>
+			
+
+			<div style="width:100%;">
+				<div class="progress">
+					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 83.33333333333333%;">
+						
+							83%
+						
+					</div>
+				</div>
+				<div style="text-align:center; font-size:10px;">% de Carga Horária Ministrada</div>
+			</div>
+		
+	
+</div></div><div class="rich-stglpanel blocoDireita" id="j_id_jsp_1236623656_162"><form id="j_id_jsp_1236623656_162:_form" name="j_id_jsp_1236623656_162:_form" method="post" style="margin:0; padding:0; display: inline;" action="/sigaa/ava/index.jsf"><div class="rich-stglpanel-header headerBloco" id="j_id_jsp_1236623656_162_header" onclick="SimpleTogglePanelManager.toggleOnClient(event,'j_id_jsp_1236623656_162');"><div class="rich-stglpanel-marker"><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_162_switch_on"><img></div><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_162_switch_off" style="display: none"><img></div></div>Notícias&nbsp;</div><div style="display: none;"><input autocomplete="off" id="j_id_jsp_1236623656_162_input" name="j_id_jsp_1236623656_162" type="hidden" value="true"></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2"></form><div class="rich-stglpanel-body " id="j_id_jsp_1236623656_162_body">
+        
+			
+		
+		
+			
+		
+		
+        			
+		
+			<center>Não há notícias cadastradas</center>
+		
+    </div></div><div class="rich-stglpanel blocoDireita" id="j_id_jsp_1236623656_167"><form id="j_id_jsp_1236623656_167:_form" name="j_id_jsp_1236623656_167:_form" method="post" style="margin:0; padding:0; display: inline;" action="/sigaa/ava/index.jsf"><div class="rich-stglpanel-header headerBloco" id="j_id_jsp_1236623656_167_header" onclick="SimpleTogglePanelManager.toggleOnClient(event,'j_id_jsp_1236623656_167');"><div class="rich-stglpanel-marker"><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_167_switch_on"><img></div><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_167_switch_off" style="display: none"><img></div></div>Enquete&nbsp;</div><div style="display: none;"><input autocomplete="off" id="j_id_jsp_1236623656_167_input" name="j_id_jsp_1236623656_167" type="hidden" value="true"></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2"></form><div class="rich-stglpanel-body " id="j_id_jsp_1236623656_167_body">
+	   		
+				
+			
+			
+				
+			
+			
+			
+			
+	        
+		
+			
+				<center>Nenhuma enquete encontrada</center>
+			
+	    </div></div><div class="rich-stglpanel blocoDireita" id="j_id_jsp_1236623656_177"><form id="j_id_jsp_1236623656_177:_form" name="j_id_jsp_1236623656_177:_form" method="post" style="margin:0; padding:0; display: inline;" action="/sigaa/ava/index.jsf"><div class="rich-stglpanel-header headerBloco" id="j_id_jsp_1236623656_177_header" onclick="SimpleTogglePanelManager.toggleOnClient(event,'j_id_jsp_1236623656_177');"><div class="rich-stglpanel-marker"><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_177_switch_on"><img></div><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_177_switch_off" style="display: none"><img></div></div>Atividades&nbsp;</div><div style="display: none;"><input autocomplete="off" id="j_id_jsp_1236623656_177_input" name="j_id_jsp_1236623656_177" type="hidden" value="true"></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2"></form><div class="rich-stglpanel-body " id="j_id_jsp_1236623656_177_body">
+    	
+			
+		
+		
+			
+		
+		
+        
+			<ul class="menu-direita">
+				
+					<li style="list-style:none !important; margin-left:0px !important;">
+						<span class="data">15/07</span>
+						<span class="descricao">Avaliação marcada para o dia 03/12/2026 </span>
+					</li>
+				
+					<li style="list-style:none !important; margin-left:0px !important;">
+						<span class="data">15/07</span>
+						<span class="descricao">Avaliação marcada para o dia 22/10/2026 </span>
+					</li>
+				
+					<li style="list-style:none !important; margin-left:0px !important;">
+						<span class="data">15/07</span>
+						<span class="descricao">Avaliação marcada para o dia 10/09/2026 </span>
+					</li>
+				
+					<li style="list-style:none !important; margin-left:0px !important;">
+						<span class="data">15/07</span>
+						<span class="descricao">Indicação de Livro: STEINBRUCH, Alfredo; WINTERLE, Paulo. Introdução à álgebra linear. São Paulo: Pearson, 1997. 245 p. ISBN 9780074609446. </span>
+					</li>
+				
+					<li style="list-style:none !important; margin-left:0px !important;">
+						<span class="data">15/07</span>
+						<span class="descricao">Indicação de Livro: BOLDRINI, José Luiz et al. Álgebra linear. 3. ed. São Paulo: HARBRA, 1980. 411 p. </span>
+					</li>
+				
+			</ul>
+		
+		
+    </div></div><div class="rich-stglpanel blocoDireita" id="j_id_jsp_1236623656_180"><form id="j_id_jsp_1236623656_180:_form" name="j_id_jsp_1236623656_180:_form" method="post" style="margin:0; padding:0; display: inline;" action="/sigaa/ava/index.jsf"><div class="rich-stglpanel-header headerBloco" id="j_id_jsp_1236623656_180_header" onclick="SimpleTogglePanelManager.toggleOnClient(event,'j_id_jsp_1236623656_180');"><div class="rich-stglpanel-marker"><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_180_switch_on"><img></div><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_180_switch_off" style="display: none"><img></div></div>Avaliações&nbsp;</div><div style="display: none;"><input autocomplete="off" id="j_id_jsp_1236623656_180_input" name="j_id_jsp_1236623656_180" type="hidden" value="true"></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2"></form><div class="rich-stglpanel-body " id="j_id_jsp_1236623656_180_body">
+    	
+			
+		
+		
+			
+		
+		
+		
+		
+		
+			<ul class="menu-direita">
+				
+					<li style="text-align: center; list-style:none !important; margin-left:0px !important"><span class="data">10/09 13:30</span><br> <span class="descricao">1ª Avaliação</span> </li>
+				
+					<li style="text-align: center; list-style:none !important; margin-left:0px !important"><span class="data">12/11 13:30</span><br> <span class="descricao">2ª Avaliação</span> </li>
+				
+					<li style="text-align: center; list-style:none !important; margin-left:0px !important"><span class="data">03/12 13:30</span><br> <span class="descricao">3ª Avaliação</span> </li>
+				
+			</ul>
+		
+    </div></div><div class="rich-stglpanel blocoDireita" id="j_id_jsp_1236623656_183"><form id="j_id_jsp_1236623656_183:_form" name="j_id_jsp_1236623656_183:_form" method="post" style="margin:0; padding:0; display: inline;" action="/sigaa/ava/index.jsf"><div class="rich-stglpanel-header headerBloco" id="j_id_jsp_1236623656_183_header" onclick="SimpleTogglePanelManager.toggleOnClient(event,'j_id_jsp_1236623656_183');"><div class="rich-stglpanel-marker"><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_183_switch_on"><img></div><div class="rich-stglpnl-marker" id="j_id_jsp_1236623656_183_switch_off" style="display: none"><img></div></div>Mensagens dos Fóruns&nbsp;</div><div style="display: none;"><input autocomplete="off" id="j_id_jsp_1236623656_183_input" name="j_id_jsp_1236623656_183" type="hidden" value="true"></div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2"></form><div class="rich-stglpanel-body " id="j_id_jsp_1236623656_183_body">
+        
+			
+		
+		
+			
+		
+		
+        			
+		
+			<center>Não há mensagens cadastradas</center>
+		
+    </div></div>
+	
+	
+    
+    
+	    
+      
+    
+    
+    
+	
+    
+
+</div>
+
+		
+		
+		
+		<div id="cabecalho" class="ui-layout-north ui-layout-pane ui-layout-pane-north ui-layout-pane-hover ui-layout-pane-north-hover ui-layout-pane-open-hover ui-layout-pane-north-open-hover" style="overflow: visible; position: absolute; margin: 0px; inset: 0px 0px auto; width: auto; z-index: 999; height: 48px; visibility: visible; display: block;">
+			<div id="info-sistema">
+				<h1> <span>IFC - SIGAA -</span></h1>
+				<h3>Sistema Integrado de Gestão de Atividades Acadêmicas</h3>
+				<div class="dir">
+					
+						<span class="ajuda-link" style="padding: 0 5px; margin: 0 5px; padding: 0 5px; position: absolute; right: 0; padding-right: 250px;">
+							<a title="Ajuda" alt="Ajuda" href="#" target="_blank" style="font-weight: bolder; border-right: 1px solid #D99C44; padding-right: 8px;">
+								Ajuda?
+							</a>
+						</span>					
+					
+					<span id="relogioAva" class="relogioAva">15:15:03</span> 
+					
+						
+						<div id="tempoSessao"><small><em>Tempo de Sessão:</em> <span id="spanRelogio" title="Tempo restante para a expiração da sessão.">01:00</span></small></div>
+						
+						<span id="sair-sistema" class="sair-sistema">
+							<a href="https://sig.ifc.edu.br/sigaa/logar.do?dispatch=logOff">SAIR</a>
+						</span>
+					
+				</div>
+			</div>
+			
+			
+			
+			
+	
+			<div style="position:relative;">
+				
+					<div id="painel-usuario" style="height: 20px;position:absolute;z-index:888;top:23px;right:5px;border:1px solid #99BBE8;display:none;">
+						<div style="position:absolute;top:-4px;right:-1px;height:4px;background:#FFF;width:24px;border-right:1px solid #99BBE8;"></div>
+						<div id="menu-usuario" style="background:#FFF;">
+							<ul>
+								<li class="modulos">
+								
+									<span id="modulos">
+										<a href="#" onclick="return exibirMenuModulos ();"> Módulos </a>
+									</span>
+								
+								</li>
+								<li class="caixa-postal"><a href="https://sig.ifc.edu.br/sigaa/abrirCaixaPostal.jsf?sistema=2" accesskey="C">Caixa Postal</a></li>
+								
+								
+									<li class="chamado">
+									
+										
+										
+											
+																						
+												
+							
+												
+													<a href="#" accesskey="a" onclick="window.open('/sigaa/novoChamadoAdmin.jsf?sistema=2', 'chamado', 'scrollbars=1,width=830,height=600')">Abrir Chamado</a>
+												
+												
+											
+											
+										
+									
+									</li>
+									<li class="ajuda">
+										<a href="https://sig.ifc.edu.br/sigaa/manuais/index.jsp" id="show-ajuda"> Ajuda </a>
+									</li>
+								
+								
+								
+									<li class="menus">
+										
+										
+										
+											<a href="https://sig.ifc.edu.br/sigaa/verPortalDiscente.do">Menu Discente</a>
+										
+										
+									</li>
+								
+								
+								
+									
+
+<li class="dados-pessoais">
+	
+		<a href="#" onclick="window.open('/sigaa/alterar_dados.jsf','','width=670,height=430, top=100, left=100, scrollbars' )">Alterar senha</a>
+	
+</li>
+								
+							</ul>
+						</div>
+						
+						<div style="position:absolute;bottom:-6px;height:5px;width:100%;background:url('/sigaa/ava/img/sombrasubmenu.png');"></div>
+					</div>
+				
+					<div id="painelDadosUsuario" class="dados-menu" style="position:relative;margin-left:3px;height:23px;vertical-align:middle;padding-right:3px;border-right:1px solid #666666;margin-top:2px;margin-right:3px;">
+						<p style="font-weight:bold;font-size:7pt;">
+							
+								FULANO DE TAL DA SILVA
+								
+					 			
+							
+						</p>
+						
+						<div style="font-size:6pt;">
+							CAMPUS BLUMENAU
+							 (11.01.09)
+							
+							
+							
+								- Semestre atual: <strong style="font-weight:bold;">2026.2</strong>
+							
+								
+						</div>
+					</div>
+				
+				
+				
+				<div id="nomeTurma" class="dados-menu" style="position:relative;vertical-align:middle;padding-top:3px;">
+					<p id="linkCodigoTurma" style="display:inline;font-weight:bold;" title="5T1234 (03/08/2026 - 11/12/2026)">CCB0916 - </p>
+					<p id="linkNomeTurma" style="display:inline;font-weight:bold;" title="5T1234 (03/08/2026 - 11/12/2026)">ÁLGEBRA LINEAR</p>
+					<p id="linkPeriodoTurma" style="display:inline;font-weight:bold;" title="5T1234 (03/08/2026 - 11/12/2026)">
+						 
+							<span title="5T1234 (03/08/2026 - 11/12/2026)">
+							
+					 		- 01
+							
+					 		</span>
+					 												
+					(2026.2)
+					 </p>
+				</div>
+				
+				<div id="menuTurmaVirtual" class="naoImprimir" style="position:absolute;right:5px;top:4px;">
+				
+				
+					
+						
+					<form id="formAcessarMenu" action="" method="get" style="display:none;">
+						<input id="botaoAcessarMenu" type="submit" style="display:none;">
+					</form>
+					
+					
+								
+					
+<form id="formAcoesTurma" name="formAcoesTurma" method="post" action="/sigaa/ava/index.jsf" enctype="application/x-www-form-urlencoded" style="text-align:right;">
+<input type="hidden" name="formAcoesTurma" value="formAcoesTurma">
+<a id="formAcoesTurma:linkExibirPaginados" href="#" style="display:none;" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formAcoesTurma'),{'formAcoesTurma:linkExibirPaginados':'formAcoesTurma:linkExibirPaginados','paginados':'true'},'');}return false"></a><a id="formAcoesTurma:linkExibirEmLista" href="#" style="display:none;" onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formAcoesTurma'),{'formAcoesTurma:linkExibirEmLista':'formAcoesTurma:linkExibirEmLista'},'');}return false"></a><button id="formAcoesTurma:botaoPortalDiscente" name="formAcoesTurma:botaoPortalDiscente" onclick="return voltarPortalDiscente();;null" style="height:20px;margin:0px;border-radius:5px 0px 0px 5px;padding-left:0px;width:25px;border-right:0px;" title="Menu Discente" type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon botaoPortal"></span><span class="ui-button-text">pf-button</span></button><button id="formAcoesTurma:botaoImprimir" name="formAcoesTurma:botaoImprimir" onclick="imprimir();;PrimeFaces.ajax.AjaxRequest('/sigaa/ava/index.jsf',{formId:'formAcoesTurma',global:true},{'formAcoesTurma:botaoImprimir':'formAcoesTurma:botaoImprimir'});return false;" style="height:20px;margin:0px;border-radius:0px;padding-left:0px;width:25px;border-right:0px;" title="Imprimir página" type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon botaoImprimir"></span><span class="ui-button-text">pf-button</span></button><button id="formAcoesTurma:visualizarPaginadas" name="formAcoesTurma:visualizarPaginadas" onclick="return exibirPaginados();;null" style="height:20px;margin:0px;margin-right:5px;border-radius:0px 5px 5px 0px;padding-left:0px;width:25px;" title="Visualizar aulas paginadas" type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon botaoAulasPaginadas"></span><span class="ui-button-text">pf-button</span></button><button id="formAcoesTurma:botaoTrocarTurma" name="formAcoesTurma:botaoTrocarTurma" onclick="dialogTurmas.show();;PrimeFaces.ajax.AjaxRequest('/sigaa/ava/index.jsf',{formId:'formAcoesTurma',global:true},{'formAcoesTurma:botaoTrocarTurma':'formAcoesTurma:botaoTrocarTurma'});return false;" style="height:20px;margin:0px;border-radius:5px 0px 0px 5px;border-right:0px;" title="Trocar de turma" type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon botaoTrocarTurma"></span><span class="ui-button-text">Trocar de Turma</span></button><button id="formAcoesTurma:botaoExibirOpcoes" name="formAcoesTurma:botaoExibirOpcoes" onclick="toggleSubMenuTurma();return false;;PrimeFaces.ajax.AjaxRequest('/sigaa/ava/index.jsf',{formId:'formAcoesTurma',global:true},{'formAcoesTurma:botaoExibirOpcoes':'formAcoesTurma:botaoExibirOpcoes'});return false;" style="height:20px;margin:0px;border-radius:0px 5px 5px 0px;padding-left:0px;width:26px;" title="Opções" type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon botaoOpcoesTurma"></span><span class="ui-button-text">pf-button</span></button><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2">
+</form>
+					
+					<input id="auxEsconderSubMenu" style="width:1px;height:1px;border:none;background:none;color:none;" onblur="setTimeout(function () {podeAlternarSubMenu=false;escondeSubMenu();}, 100);">
+				</div>
+			</div>
+			
+			
+			
+			
+		</div>
+		
+		
+		
+			
+
+		<div id="conteudo" class="ui-layout-center ui-layout-pane ui-layout-pane-center" style="position: absolute; margin: 0px; inset: 53px 230px 30px 195px; height: 531px; width: 919px; z-index: 1; visibility: visible; display: block;">
+			<div id="scroll-wrapper">		
+			
+			
+			
+
+
+
+					
+			
+				
+			
+		
+
+	
+<form id="formAva" name="formAva" method="post" action="/sigaa/ava/index.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="formAva" value="formAva">
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+<input id="formAva:idTopicoSelecionado" type="hidden" name="formAva:idTopicoSelecionado" value="0"><input id="formAva:bExibirTopico" name="formAva:bExibirTopico" onclick="A4J.AJAX.Submit('formAva',event,{'oncomplete':function(request,event,data){completarCarregamentoTopico();},'similarityGroupingId':'formAva:bExibirTopico','parameters':{'formAva:bExibirTopico':'formAva:bExibirTopico'} ,'containerId':'formAva:j_id_jsp_1236623656_319'} );return false;" style="display:none;" type="button"><span id="formAva:panelTopicosNaoSelecionados"><span id="formAva:j_id_jsp_1236623656_323:0:aulas"><div id="formAva:j_id_jsp_1236623656_323:0:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:0:titulo" class="titulo">Apresentação da disciplina, do cronograma de ensino e dos critérios de avaliação. Matrizes: definição, tipos especiais. Operações com matrizes. (06/08/2026 - 06/08/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:0:conteudo" class="conteudotopico"><p><span id="formAva:panelTopicosNaoSelecionados"><span id="formAva:j_id_jsp_1236623656_323:0:aulas"><span id="formAva:panelTopicosNaoSelecionados"><span id="formAva:j_id_jsp_1236623656_323:0:aulas"><span id="formAva:panelTopicosNaoSelecionados"><span id="formAva:j_id_jsp_1375300775_323:0:aulas"><span style="font-size: small;"><span style="color: #ff0000;"><strong>Material da disciplina:</strong></span> <a href="#">Clique aqui para acessar o material de Álgebra Linear no Drive.</a></span></span></span></span></span></span></span></p><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:0:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:1:aulas"><div id="formAva:j_id_jsp_1236623656_323:1:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:1:titulo" class="titulo">Determinantes: definição e propriedades. Regra de Laplace e Regra de Chió para o cálculo do determinante. (13/08/2026 - 13/08/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:1:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:1:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:2:aulas"><div id="formAva:j_id_jsp_1236623656_323:2:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:2:titulo" class="titulo">Matriz inversa: definição e propriedades. Cálculo da matriz inversa usando operações elementares. Cálculo da matriz inversa usando Matriz Adjunta. (20/08/2026 - 20/08/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:2:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:2:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:3:aulas"><div id="formAva:j_id_jsp_1236623656_323:3:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:3:titulo" class="titulo">Definição e representação de sistemas lineares.  Sistemas equivalentes. Escalonamento e Classificação de sistemas. (27/08/2026 - 27/08/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:3:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:3:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:4:aulas"><div id="formAva:j_id_jsp_1236623656_323:4:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:4:titulo" class="titulo">Sistemas homogêneos. Regra de Cramer. Aplicações de sistemas lineares. (03/09/2026 - 03/09/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:4:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:4:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:5:aulas"><div id="formAva:j_id_jsp_1236623656_323:5:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:5:titulo" class="titulo">Prova 1 (10/09/2026 - 10/09/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:5:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:5:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:6:aulas"><div id="formAva:j_id_jsp_1236623656_323:6:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:6:titulo" class="titulo">Espaços vetoriais: definição e exemplos. Subespaços vetoriais.   (17/09/2026 - 17/09/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:6:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:6:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:7:aulas"><div id="formAva:j_id_jsp_1236623656_323:7:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:7:titulo" class="titulo">Combinações lineares e espaços gerados. Dependência e independência linear. Base e dimensão de um espaço vetorial. (24/09/2026 - 24/09/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:7:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:7:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:8:aulas"><div id="formAva:j_id_jsp_1236623656_323:8:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:8:titulo" class="titulo">Transformações lineares: definição, exemplos e propriedades. Núcleo e imagem. (01/10/2026 - 01/10/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:8:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:8:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:9:aulas"><div id="formAva:j_id_jsp_1236623656_323:9:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:9:titulo" class="titulo">Isomorfismos e automorfismos. Exemplos e exercícios. (08/10/2026 - 08/10/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:9:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:9:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:10:aulas"><div id="formAva:j_id_jsp_1236623656_323:10:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:10:titulo" class="titulo">A matriz de uma transformação linear.  (15/10/2026 - 15/10/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:10:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:10:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:11:aulas"><div id="formAva:j_id_jsp_1236623656_323:11:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:11:titulo" class="titulo">Prova 2 (22/10/2026 - 22/10/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:11:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:11:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:12:aulas"><div id="formAva:j_id_jsp_1236623656_323:12:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:12:titulo" class="titulo">Produto interno: definição e propriedades. Norma e ortogonalidade.  (29/10/2026 - 29/10/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:12:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:12:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:13:aulas"><div id="formAva:j_id_jsp_1236623656_323:13:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:13:titulo" class="titulo">Bases ortonormais e processo de ortonormalização de Gram-Schmidt. Operadores lineares especiais: operador projeção ortogonal, operador isometria e operador auto-adjunto. (05/11/2026 - 05/11/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:13:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:13:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:14:aulas"><div id="formAva:j_id_jsp_1236623656_323:14:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:14:titulo" class="titulo">Autovalores e autovetores: definição e exemplos. Subespaços próprios. (12/11/2026 - 12/11/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:14:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:14:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:15:aulas"><div id="formAva:j_id_jsp_1236623656_323:15:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:15:titulo" class="titulo">Polinômio característico. Diagonalização de operadores lineares. (19/11/2026 - 19/11/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:15:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:15:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:16:aulas"><div id="formAva:j_id_jsp_1236623656_323:16:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:16:titulo" class="titulo">Polinômio minimal. Forma canônica de Jordan. (26/11/2026 - 26/11/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:16:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:16:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:17:aulas"><div id="formAva:j_id_jsp_1236623656_323:17:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:17:titulo" class="titulo">Prova 3 (03/12/2026 - 03/12/2026) 
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:17:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:17:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				<span id="formAva:j_id_jsp_1236623656_323:18:aulas"><div id="formAva:j_id_jsp_1236623656_323:18:topico_aula" style="padding:10px; position: relative; margin-left: 10px; background:rgb()" class="topico-aula"><div id="formAva:j_id_jsp_1236623656_323:18:titulo" class="titulo"><span style="color:red;font-weight:bold;">Aula cancelada - Excede a carga horária da disciplina</span><span style="color:red;font-weight:bold;"> (10/12/2026) </span>
+			   
+		
+			 
+			
+			
+			
+			
+			
+	
+			<small><i>
+				
+			</i></small>
+		</div><div id="formAva:j_id_jsp_1236623656_323:18:conteudo" class="conteudotopico"><div class="drgind_fly drgind_default drag_indicator " id="formAva:j_id_jsp_1236623656_323:18:dragIndicator" style="display: none; " xmlns:rich="http://richfaces.ajax4jsf.org/rich"></div></div></div><div style="clear:both"></div></span>
+					
+ 
+ 
+ 	
+
+
+
+ 
+
+
+				</span><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2">
+</form>
+			</div>
+		</div>
+		
+		
+		
+		<div id="rodape" class="ui-layout-south ui-layout-pane ui-layout-pane-south" style="position: absolute; margin: 0px; inset: auto 0px 0px; width: auto; z-index: 1; height: 25px; visibility: visible; display: block;">
+			<p>	SIGAA | Diretoria de Tecnologia da Informação - (47) 3331-7800 | Copyright © 2006-2026 - UFRN - sigaa-04.re.sig.prd.datacenter.ifc.edu.br.sigaa-04.re.sig.prd.datacenter.ifc.edu.br
+			
+			 
+				 - <a href="#" style="color:#FFF;" onclick="javascript:versao();return false;">v4.12.24.57</a>
+					
+			</p>
+		</div>
+		
+		
+		
+		
+		
+		<div id="mensagem">
+			<div class="x-window-header"></div>
+			<div class="x-window-body"></div>
+		</div>
+		<div id="" style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; top: 48px; cursor: default; width: 1366px; height: 5px; left: 0px;" class="ui-layout-resizer ui-layout-resizer-north ui-layout-resizer-open ui-layout-resizer-north-open"><div id="" style="position: absolute; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible; display: none;" class="ui-layout-toggler ui-layout-toggler-north ui-layout-toggler-open ui-layout-toggler-north-open" title="Close"></div></div><div id="" style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; bottom: 25px; cursor: default; width: 1366px; height: 5px; left: 0px;" class="ui-layout-resizer ui-layout-resizer-south ui-layout-resizer-open ui-layout-resizer-south-open"><div id="" style="position: absolute; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible; display: none;" class="ui-layout-toggler ui-layout-toggler-south ui-layout-toggler-open ui-layout-toggler-south-open" title="Close"></div></div><div id="" style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; left: 190px; cursor: default; height: 553px; width: 5px; top: 53px;" class="ui-layout-resizer ui-layout-resizer-west ui-layout-resizer-open ui-layout-resizer-west-open"><div id="" style="position: absolute; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible; display: none;" class="ui-layout-toggler ui-layout-toggler-west ui-layout-toggler-open ui-layout-toggler-west-open" title="Close"></div></div><div id="" style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; right: 225px; cursor: default; height: 553px; width: 5px; top: 53px;" class="ui-layout-resizer ui-layout-resizer-east ui-layout-resizer-open ui-layout-resizer-east-open"><div id="" style="position: absolute; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible; display: none;" class="botaoDireita botaoDireita-east botaoDireita-open botaoDireita-east-open" title="Close"></div></div></div><div style="display: none; z-index: 1000; outline: 0px; position: absolute;" class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-j_id_jsp_1236623656_4"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" unselectable="on" style="user-select: none;"><span class="ui-dialog-title" id="ui-dialog-title-j_id_jsp_1236623656_4" unselectable="on" style="user-select: none;">Trocar de Turma</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" unselectable="on" style="user-select: none;"><span class="ui-icon ui-icon-closethick" unselectable="on" style="user-select: none;">close</span></a></div><div id="j_id_jsp_1236623656_4" class="ui-dialog-content ui-widget-content"><span class="linkTurma" style="font-weight:bold;text-align:center;margin-top:10px;margin-bottom:10px;font-size:10pt;display:block;">Selecione uma das turmas abaixo para acessá-la:</span>
+<form id="formTurma" name="formTurma" method="post" action="/sigaa/ava/index.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="formTurma" value="formTurma">
+
+
+<a href="#" onclick="var a=function(){return permitirEscolhaTurma();};var b=function(){if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formTurma'),{'formTurma:j_id_jsp_1236623656_7':'formTurma:j_id_jsp_1236623656_7','frontEndIdTurma':'EBB141605685F61283CE48FE6DC56E2672CA93B4'},'');}return false};return (a()==false) ? false : b();" class="linkTurma">
+							
+							<span style="display:inline-block;width:97%;height:16px;overflow:hidden;vertical-align:middle;color:#003390;font-size:9pt;background:url('/sigaa/img/avancar.gif') #F0F0F0 no-repeat right;padding:5px;">
+								CCB0916 - ÁLGEBRA LINEAR (60h) (2026.2)
+							</span>
+						</a><a href="#" onclick="var a=function(){return permitirEscolhaTurma();};var b=function(){if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formTurma'),{'formTurma:j_id_jsp_1236623656_7j_id_1':'formTurma:j_id_jsp_1236623656_7j_id_1','frontEndIdTurma':'35597016CEE0F03EC35A5079660F731E785B0432'},'');}return false};return (a()==false) ? false : b();" class="linkTurma">
+							
+							<span style="display:inline-block;width:97%;height:16px;overflow:hidden;vertical-align:middle;color:#003390;font-size:9pt;background:url('/sigaa/img/avancar.gif')  no-repeat right;padding:5px;">
+								CCB0924 - ARQUITETURA DE COMPUTADORES (60h) (2026.2)
+							</span>
+						</a><a href="#" onclick="var a=function(){return permitirEscolhaTurma();};var b=function(){if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formTurma'),{'formTurma:j_id_jsp_1236623656_7j_id_2':'formTurma:j_id_jsp_1236623656_7j_id_2','frontEndIdTurma':'1879210635CC367DD18FF9870B5C0D80766BF53B'},'');}return false};return (a()==false) ? false : b();" class="linkTurma">
+							
+							<span style="display:inline-block;width:97%;height:16px;overflow:hidden;vertical-align:middle;color:#003390;font-size:9pt;background:url('/sigaa/img/avancar.gif') #F0F0F0 no-repeat right;padding:5px;">
+								CCB0925 - CÁLCULO DIFERENCIAL E INTEGRAL II (60h) (2026.2)
+							</span>
+						</a><a href="#" onclick="var a=function(){return permitirEscolhaTurma();};var b=function(){if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formTurma'),{'formTurma:j_id_jsp_1236623656_7j_id_3':'formTurma:j_id_jsp_1236623656_7j_id_3','frontEndIdTurma':'260EB4DC0846B2DCE541B46DFA5E607B0C786601'},'');}return false};return (a()==false) ? false : b();" class="linkTurma">
+							
+							<span style="display:inline-block;width:97%;height:16px;overflow:hidden;vertical-align:middle;color:#003390;font-size:9pt;background:url('/sigaa/img/avancar.gif')  no-repeat right;padding:5px;">
+								CCB0926 - COMPUTAÇÃO NA EDUCAÇÃO (60h) (2026.2)
+							</span>
+						</a><a href="#" onclick="var a=function(){return permitirEscolhaTurma();};var b=function(){if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formTurma'),{'formTurma:j_id_jsp_1236623656_7j_id_4':'formTurma:j_id_jsp_1236623656_7j_id_4','frontEndIdTurma':'F56D62444C8379786BD3A495D65A7603A9FAB815'},'');}return false};return (a()==false) ? false : b();" class="linkTurma">
+							
+							<span style="display:inline-block;width:97%;height:16px;overflow:hidden;vertical-align:middle;color:#003390;font-size:9pt;background:url('/sigaa/img/avancar.gif') #F0F0F0 no-repeat right;padding:5px;">
+								CCB0927 - ENGENHARIA DE SOFTWARE (60h) (2026.2)
+							</span>
+						</a><a href="#" onclick="var a=function(){return permitirEscolhaTurma();};var b=function(){if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formTurma'),{'formTurma:j_id_jsp_1236623656_7j_id_5':'formTurma:j_id_jsp_1236623656_7j_id_5','frontEndIdTurma':'23F6DAAC1AD97CB264DB8500C9AD3307219250E3'},'');}return false};return (a()==false) ? false : b();" class="linkTurma">
+							
+							<span style="display:inline-block;width:97%;height:16px;overflow:hidden;vertical-align:middle;color:#003390;font-size:9pt;background:url('/sigaa/img/avancar.gif')  no-repeat right;padding:5px;">
+								CCB0928 - ESTRUTURA DE DADOS II (60h) (2026.2)
+							</span>
+						</a><a href="#" onclick="var a=function(){return permitirEscolhaTurma();};var b=function(){if(typeof jsfcljs == 'function'){jsfcljs(document.getElementById('formTurma'),{'formTurma:j_id_jsp_1236623656_7j_id_6':'formTurma:j_id_jsp_1236623656_7j_id_6','frontEndIdTurma':'DFC514827ACD87E1D8D76E27E216E36089D6AD6B'},'');}return false};return (a()==false) ? false : b();" class="linkTurma">
+							
+							<span style="display:inline-block;width:97%;height:16px;overflow:hidden;vertical-align:middle;color:#003390;font-size:9pt;background:url('/sigaa/img/avancar.gif') #F0F0F0 no-repeat right;padding:5px;">
+								CCB0929 - LINGUAGENS FORMAIS E AUTÔMATOS (60h) (2026.2)
+							</span>
+						</a>
+					
+					
+						
+						
+						
+						
+					
+					
+						
+						
+						
+						
+					
+					
+						
+						
+						
+						
+					
+					
+						
+						
+						
+						
+					
+					
+						
+						
+						
+						
+					
+					
+						
+						
+						
+						
+					
+					
+						
+						
+						
+						
+					
+					<center>
+						<div id="MensagemCarregamento" style="display: none;">
+							<br><br>
+							<p>Por favor, aguarde enquanto carregamos a página ...</p><br><br>
+							<img>
+						</div>
+					</center>	
+				<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="j_id2">
+</form></div><div class="ui-resizable-handle ui-resizable-n" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-e" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-s" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-w" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; user-select: none;" unselectable="on"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; user-select: none;" unselectable="on"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; user-select: none;" unselectable="on"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; user-select: none;" unselectable="on"></div></div><div style="display: none; z-index: 1000; outline: 0px; position: absolute;" class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-j_id_jsp_1236623656_14"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" unselectable="on" style="user-select: none;"><span class="ui-dialog-title" id="ui-dialog-title-j_id_jsp_1236623656_14" unselectable="on" style="user-select: none;">Perfil do Discente</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" unselectable="on" style="user-select: none;"><span class="ui-icon ui-icon-closethick" unselectable="on" style="user-select: none;">close</span></a></div><div id="j_id_jsp_1236623656_14" class="ui-dialog-content ui-widget-content"><span id="basePanelPerfil">O usuário selecionado não é um discente.</span></div><div class="ui-resizable-handle ui-resizable-n" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-e" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-s" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-w" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; user-select: none;" unselectable="on"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; user-select: none;" unselectable="on"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; user-select: none;" unselectable="on"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; user-select: none;" unselectable="on"></div></div><div style="display: none; z-index: 1000; outline: 0px; position: absolute;" class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-j_id_jsp_1236623656_36"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" unselectable="on" style="user-select: none;"><span class="ui-dialog-title" id="ui-dialog-title-j_id_jsp_1236623656_36" unselectable="on" style="user-select: none;">Módulos do SIGAA</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" unselectable="on" style="user-select: none;"><span class="ui-icon ui-icon-closethick" unselectable="on" style="user-select: none;">close</span></a></div><div id="j_id_jsp_1236623656_36" class="ui-dialog-content ui-widget-content">
+	<div id="menu_principal" class="popup">
+		
+
+<div id="modulos">
+	<h2 alt="O usuário tem acesso aos módulos que possuí *"> Menu Principal</h2>
+	<ul>
+	
+
+				
+			
+				
+		<li class="encceja on"> <a href="https://sig.ifc.edu.br/sigaa/verMenuEncceja.do"> 
+                Encceja  </a> </li>	
+		
+
+			
+ 
+		<li class="tecnico off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+
+				Técnico e EJA-EPT</span></a>
+
+		</li>
+		<li class="tecnicoIntegrado off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Técnico Integrado</span></a>
+		</li>
+		<li class="graduacao off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Graduação   </span></a>
+		</li>
+		<li class="lato_sensu off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção"> 
+				Lato Sensu </span></a>
+		</li>
+		<li class="stricto_sensu off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Stricto Sensu </span></a>
+		</li>
+		<li class="formacao_complementar off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Formação Complementar</span></a>
+
+		</li><li class="acoes_associadas off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Ações Acadêmicas Integradas </span></a>
+		</li>
+		<li class="ead off"> 
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Ensino a Distância </span></a> 
+		</li><li class="pesquisa off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Pesquisa</span></a>
+		</li>
+		<li class="extensao off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Extensão  </span></a>
+		</li>
+		<li class="monitoria off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Monitoria </span></a>
+		</li>
+		
+		<li class="sae off"> 
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Assistência ao Estudante </span></a> 
+		</li>
+		<li class="ouvidoria off"> 
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Ouvidoria </span></a> 
+		</li>
+		<li class="ambiente_virtual off"> 
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Ambientes Virtuais </span></a> 
+		</li>
+		<li class="prodocente off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Produção Intelectual</span></a> 
+		</li>
+
+            <li class="biblioteca off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+  
+				Biblioteca</span></a> 
+		</li>
+
+		<li class="diploma off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Diplomas </span></a> 
+		</li>
+		
+		<li class="central_estagios off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Central de Estágios</span></a> 
+		</li>		
+		
+		<li class="saude off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Residências em Saúde</span></a> 
+		</li>
+		<li class="vestibular off"> 
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Processo Seletivo </span></a> 
+		</li>
+		
+		<li class="nee off"> 
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção"> 
+				NEE </span></a> 
+		</li>
+		
+		<li class="portal_avaliacao off"> 
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Avaliação Institucional</span></a> 
+		</li>
+
+		<li class="administracao off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Administração do Sistema </span></a>
+		</li>
+		<li class="pap off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Prog. de Atual. Pedagógica
+			</span></a> 
+		 </li>
+		 <li class="relacoes_internacionais off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Relações Internacionais
+			</span></a> 
+		 </li>
+		 <li class="metropole_digital off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Instituto Metrópole Digital</span></a>
+		</li>
+	
+		<li class="ensino_rede off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Ensino em Rede</span></a>
+		</li>
+			
+		<li class="rtd off">
+    		<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+    			RTD (Gestor)
+    		</span></a>
+		</li>		
+	
+
+            
+        <li class="rtd off">
+            <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+                Relatórios Gerais
+            </span></a>
+        </li>       
+            
+			
+		 <br clear="all">
+	</ul>
+	
+	<h2> Outros Sistemas </h2>
+	<ul class="outros_sistemas">
+		<li class="sipac off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Administrativo	
+				(SIPAC) <br>
+			</span></a>
+    	</li>
+		<li class="sigrh off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Recursos Humanos
+				 (SIGRH) <br>
+			</span></a>
+		 </li>
+		 
+		 
+		 
+		<li class="sigadmin off">
+			<a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+			SIGAdmin 
+			</span></a>
+		 </li>
+	</ul>
+	
+	<br clear="all">
+</div>
+
+<div id="portais">
+	<h2> Portais </h2>
+	<ul>
+		<li class="docente off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+			Portal do Docente  </span></a> </li>
+		
+		<li class="discente on"> 
+			<a href="https://sig.ifc.edu.br/sigaa/verPortalDiscente.do">
+				Portal do Discente 
+			</a> 
+		</li>
+		
+		<li class="portal_lato off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção"> 
+			Portal Coord. <br> Lato Sensu  </span></a></li>
+	
+		<li class="portal_stricto off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção"> 
+			Portal Coord. <br> Stricto Sensu</span></a></li>
+	
+		<li class="portal_graduacao off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção"> 
+			Portal Coord. Graduação </span></a></li>
+
+		<li class="tutor off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção"> 
+				Portal Coord. Polo  </span></a> </li>
+		<li class="tutor off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção"> 
+				Portal do Tutor </span></a> </li>
+		
+		<li class="tutor off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção"> 
+				Portal do Professor Mediador </span></a> </li> 
+		 
+		<li class="portal_reitor off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				CPDI </span></a></li>
+		<li class="portal_reitor off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Portal da Reitoria </span></a> </li>
+		<li class="portal_relatorios off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Relatórios de Gestão</span></a> </li>		
+		<li class="portal_concedente_estagio off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Portal do Concedente de Estágio</span></a> </li>
+		<li class="portal_rede off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção"> 
+			Portal Coord. <br> Ensino Rede</span></a></li>
+				
+		<li class="portal_familiar off"> <a href="#"><span class="tooltip" title="Você não possui permissão para acessar esta opção">
+				Portal do Familiar</span></a> </li>
+	
+
+
+<li class="portal_egresso on">
+    <a href="https://sig.ifc.edu.br/sigaa/verPortalEgressos.do">
+    Portal do Egresso
+    </a>
+</li>
+	
+
+
+
+
+
+
+ 
+
+
+
+						
+	</ul>
+</div>
+	</div>
+</div><div class="ui-resizable-handle ui-resizable-n" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-e" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-s" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-w" unselectable="on" style="user-select: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; user-select: none;" unselectable="on"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; user-select: none;" unselectable="on"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; user-select: none;" unselectable="on"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; user-select: none;" unselectable="on"></div></div> 
+		
+		 
+			
+		
+		
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+</body></html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="background cjppuebect idc0_350"><head><meta charset="utf-8">
+
+
+
+
+
+
+
+<title>SIGAA - Sistema Integrado de Gestão de Atividades Acadêmicas</title>
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+		
+		
+		
+		
+		
+	
+	
+
+
+
+
+
+
+
+
+	
+	
+	
+</head>
+
+<body cz-shortcut-listen="true"><div id="painel-mensagem-envio_mask" class="mask" style="z-index: 5;">&nbsp;</div>
+
+<input type="hidden" value="2" id="sistema">
+
+
+
+
+
+
+	<div id="container">
+	<div id="cabecalho">
+		<div id="info-sistema">
+			<h1><span>IFC - SIGAA -</span></h1>
+			<h3>Sistema Integrado de Gestão de Atividades Acadêmicas</h3>
+			<div class="dir">
+				
+			</div>
+		</div>
+	 
+
+	<div id="painel-usuario" style="height: 20px;">
+	
+	<div id="menu-principal"></div>
+	</div>
+	</div>
+	
+
+	<div id="conteudo">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+	
+
+
+
+ 
+
+
+
+
+
+
+
+
+	<div align="center" style="margin: 0 auto; background: #EFF3FA; padding: 10px;">
+		<p style="font-weight: bold; color: #F00;">ATENÇÃO!</p>
+		<p style="width: 75%;">	O sistema diferencia letras maiúsculas de minúsculas APENAS na senha,
+		portanto ela deve ser digitada da mesma maneira que no cadastro.</p>
+	</div>
+
+
+<div align="center" style="width: 100%; margin: 0 auto; padding: 10px 0;">
+<table width="100%" align="center" style="border-collapse: separate; border-spacing: 3px">
+	<tbody><tr>
+		
+		<td class="painel sistemaAtual">
+			<a href="https://sig.ifc.edu.br/sigaa/?modo=classico">
+			SIGAA</a> <br> 
+			(Acadêmico)
+		</td>
+		
+		
+		<td class="painel ">
+			<a href="https://sig.ifc.edu.br/sipac/?modo=classico">
+			SIPAC</a><br>
+			(Administrativo)
+		</td>
+		
+		
+		<td class="painel ">
+			<a href="https://sig.ifc.edu.br/sigrh/?modo=classico">
+			SIGRH</a><br>
+			(Recursos Humanos)
+		</td>
+		
+		
+		
+		
+	</tr>
+	
+	<tr>
+		
+		
+		
+		
+		
+		<td class="painel ">
+			<a href="https://sig.ifc.edu.br/admin/">
+			SIGAdmin</a><br>
+			(Administração e Comunicação)
+		</td>
+		
+		
+	</tr>
+</tbody></table>
+</div>
+
+
+
+
+
+<br>
+
+<div style="margin: 0 auto; width: 645px; ">
+	<div class="">
+		<center>
+			Perdeu o e-mail de confirmação de cadastro? <a href="https://sig.ifc.edu.br/admin/public/recuperar_codigo.jsf">Clique aqui para recuperá-lo.</a> <br>
+			Esqueceu o login? <a href="https://sig.ifc.edu.br/admin/public/recuperar_login.jsf">Clique aqui para recuperá-lo.</a> <br>
+			Esqueceu a senha? <a href="https://sig.ifc.edu.br/admin/public/recuperar_senha.jsf">Clique aqui para recuperá-la.</a>
+		</center>
+	</div>
+	
+</div>
+		
+
+<br clear="all">
+
+	<br>
+	<center style="color: #922; font-weight: bold;"></center>
+
+<br>
+<div class="logon" style="width:50%; margin: 0 auto;">
+<h3> Entrar no Sistema </h3> 
+<form name="loginForm" method="post" action="/sigaa/logar.do?dispatch=logOn">
+	<input type="hidden" name="width" value="1366" id="width">
+	<input type="hidden" name="height" value="768" id="height">
+	<input type="hidden" name="urlRedirect" value="">
+	<input type="hidden" name="subsistemaRedirect" value="">
+	<input type="hidden" name="acao" value="">
+	<input type="hidden" name="acessibilidade" value="">
+
+	
+
+<table align="center" width="100%" cellspacing="0" cellpadding="3">
+<tbody>
+	<tr>
+		<th width="35%">  Usuário: </th>
+		<td align="left"> <input type="text" name="user.login" size="20"></td>
+	</tr>
+	<tr>
+		<th> Senha: </th>
+		<td> <input type="password" name="user.senha" size="20" value=""> </td>
+	</tr>
+</tbody>
+<tfoot>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="Entrar" onclick="return prevenirDuploClique();">
+		</td>
+	</tr>
+</tfoot>
+</table>
+</form>
+
+
+
+</div>
+<br>
+<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<td colspan="5" align="center" width="25%">
+			<br><br>
+						
+			<b>Servidor,</b> <br>
+						
+			caso ainda não possua cadastro no SIGAA,<br>clique no link abaixo.<br>
+			<a href="https://sig.ifc.edu.br/admin/auto_cadastro/form.jsf?origem=2">
+				<img height="16" width="16" border="0" alt="Novo Usuário">
+				<br>
+				Cadastre-se
+			</a>
+		</td>
+            		
+		<td colspan="5" align="center" width="25%">
+			<br><br>
+			<b>Aluno,</b><br>caso ainda não possua cadastro no SIGAA, <br>clique no link abaixo.<br>
+			<a href="https://sig.ifc.edu.br/sigaa/public/cadastro/discente.jsf"><img border="0" alt="Novo Usuário">
+				<br>
+				Cadastre-se</a>
+		</td>
+		
+		<td colspan="5" align="center" width="25%">
+			<br><br>
+			<b>Familiares,</b><br>caso ainda não possuam cadastro no SIGAA, <br>clique no link abaixo.<br>
+			<a href="https://sig.ifc.edu.br/sigaa/public/cadastro/familiares.jsf"><img border="0" alt="Novo Usuário">
+				<br>
+				Cadastre-se</a>
+		</td>
+		
+		<td colspan="5" align="center" width="25%">
+            <br><br>
+            <b>Atenção,</b><br>Para acessar o Portal Público do SIGAA, <br>clique no link abaixo.<br>
+            <a href="https://sig.ifc.edu.br/sigaa/public/"><img border="0" alt="Portal Público">
+                <br>
+                Portal Público</a>
+        </td> 
+           	
+	</tr>
+</tbody></table>
+<br><br>
+
+
+
+	
+	
+		
+
+
+
+<div class="clear"> </div>
+
+</div> 
+	<br>
+
+	
+
+	<div id="rodape">
+		<p>	SIGAA | Diretoria de Tecnologia da Informação - (47) 3331-7800 | Copyright © 2006-2026 - UFRN - sigaa-04.re.sig.prd.datacenter.ifc.edu.br.sigaa-04.re.sig.prd.datacenter.ifc.edu.br
+		
+		 
+			 - <a onclick="javascript:versao();">v4.12.24.57</a>
+				
+		</p>
+	</div>
+
+
+</div>  
+
+<div class="panel-container dialog shadow" id="painel-mensagem-envio_c" style="z-index: 6; left: 332px; top: 284px;"><div id="painel-mensagem-envio" class=" module overlay panel" style="visibility: inherit; width: 700px;"><div class="hd" style="cursor: move;" id="painel-mensagem-envio_h">Mensagem</div> <div class="bd">Aguarde...<form name="frm_painel-mensagem-envio" action=""></form></div><div class="ft"><span class="button-group"><button type="button" class="default">Enviar</button><button type="button">Cancelar</button></span></div><div class=" close secure">&nbsp;</div></div><div class="underlay">&nbsp;</div></div>
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+ 
+	
+
+
+
+
+	
+
+</body></html>

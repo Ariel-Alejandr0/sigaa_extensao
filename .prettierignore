@@ -5,3 +5,6 @@ package-lock.json
 
 # A documentação em Markdown é mantida à mão (o Prettier realinharia as tabelas).
 *.md
+
+# Páginas do SIGAA salvas para os testes: ficam como saíram da anonimização.
+tests/fixtures/
