@@ -37,6 +37,17 @@ export default [
     },
   },
   {
+    // Testes (Vitest): módulos ES, rodam no Node com o jsdom.
+    files: ["tests/**/*.js"],
+    languageOptions: {
+      sourceType: "module",
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+      },
+    },
+  },
+  {
     files: ["*.mjs"],
     languageOptions: {
       sourceType: "module",
