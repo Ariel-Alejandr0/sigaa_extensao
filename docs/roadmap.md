@@ -11,7 +11,7 @@ Precisam ser tomadas antes ou durante as fases indicadas. Cada decisão deve vir
 | # | Decisão | Opções | Recomendação inicial | Fase |
 |---|---|---|---|---|
 | DEC1 | Licença | **Decidida.** MIT, com repositório público ([ADR 0003](decisoes/0003-licenca.md)) | — | 0 |
-| DEC2 | Linguagem | JavaScript puro, JS + JSDoc com `checkJs`, TypeScript | JS + JSDoc + `checkJs`: ganha verificação de tipos sem mudar a base | 1 |
+| DEC2 | Linguagem | **Decidida.** JS + JSDoc + `checkJs` ([ADR 0004](decisoes/0004-jsdoc-checkjs.md)) | — | 1 |
 | DEC3 | **Integração com o Google Agenda** [C1] | **Decidida.** Sem OAuth ([ADR 0001](decisoes/0001-sem-oauth.md)). Manter o download do `.ics` (garantido) e a importação automática (melhor esforço, volta para o download quando falha) ([ADR 0002](decisoes/0002-download-e-importacao-automatica.md)) | — | 3 |
 | DEC4 | Navegadores | Só Chrome; Chrome + Edge; também Firefox | Chrome + Edge (mesmo pacote). Firefox só se houver demanda. | 3 |
 | DEC5 | Instituições | Só IFC; qualquer SIGAA configurável | Só IFC agora, mas com host e seletores isolados em configuração para facilitar depois | 3 |
@@ -28,12 +28,12 @@ Precisam ser tomadas antes ou durante as fases indicadas. Cada decisão deve vir
 **Pronto quando:** o projeto está versionado no GitHub com a `main` protegida.
 
 ## Fase 1 — Ferramentas de desenvolvimento
-- [ ] `package.json` com `engines.node` e scripts `lint`, `format`, `test`, `build`, `package` [A3].
-- [ ] ESLint (config flat, globals de `webextensions` e `browser`) e Prettier; aplicar a formatação em um commit isolado.
-- [ ] Verificação de tipos conforme DEC2 (`tsconfig.json` com `checkJs` + `@types/chrome`).
-- [ ] Hook de pré-commit opcional (lint + testes rápidos).
+- [x] `package.json` com `engines.node` e scripts `lint`, `format`, `format:check`, `typecheck`, `test`, `build`, `package` [A3]. *`test`, `build` e `package` só avisam que ainda não existem, até as fases 2, 3 e 5.*
+- [x] ESLint (config flat, globals de `webextensions` e `browser`) e Prettier; aplicar a formatação em um commit isolado. *O Prettier não formata os `.md`, para não realinhar as tabelas da documentação.*
+- [x] Verificação de tipos conforme DEC2 (`tsconfig.json` com `checkJs` + `@types/chrome`). *Sem `strict` por enquanto; globais compartilhados em `types/globais.d.ts`.*
+- [ ] Hook de pré-commit opcional (lint + testes rápidos). *Adiado em 2026-11-21: sem testes rápidos ainda, e o CI da fase 5 vai cobrir lint e tipos.*
 
-**Pronto quando:** `npm run lint` e `npm run format -- --check` passam limpos.
+**Pronto quando:** `npm run lint`, `npm run format:check` e `npm run typecheck` passam limpos.
 
 ## Fase 2 — Rede de segurança: testes de caracterização
 - [ ] Salvar **fixtures** de HTML real, com dados pessoais removidos: página inicial do discente, página de turma com avaliações, turma sem avaliações, tela de login (sessão expirada) [A2].
