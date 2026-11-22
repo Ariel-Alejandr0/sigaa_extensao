@@ -1,0 +1,50 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`gerarIcs: estrutura > corresponde ao snapshot (avaliação com hora, sem hora e tarefa) 1`] = `
+"BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//sigaa-agenda//PT-BR
+CALSCALE:GREGORIAN
+X-WR-CALNAME:IFC - Avaliações
+BEGIN:VEVENT
+UID:8bcd63d17b47fbd7093a0e30f28efb86e9c862cb@sigaa-agenda
+DTSTAMP:20260301T120000Z
+DTSTART:20260410T170000Z
+DTEND:20260410T184000Z
+SUMMARY:Avaliação: Prova 1 — Matemática
+DESCRIPTION:Importado do SIGAA\\nMatéria: Matemática\\nTipo: Avaliação
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Lembrete
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:558cbd4e156fc62ba0afb5a3c90c90ffd2b25505@sigaa-agenda
+DTSTAMP:20260301T120000Z
+DTSTART;VALUE=DATE:20260410
+DTEND;VALUE=DATE:20260411
+SUMMARY:Avaliação: Seminário — Matemática
+DESCRIPTION:Importado do SIGAA\\nMatéria: Matemática\\nTipo: Avaliação
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Lembrete
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2b0ea2b96a2bdaec209efccdb6287c41f69e77c0@sigaa-agenda
+DTSTAMP:20260301T120000Z
+DTSTART:20260411T024400Z
+DTEND:20260411T025900Z
+SUMMARY:Tarefa: Lista 3 — Matemática
+DESCRIPTION:Importado do SIGAA\\nMatéria: Matemática\\nTipo: Tarefa
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Lembrete
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+"
+`;

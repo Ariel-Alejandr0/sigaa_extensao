@@ -36,14 +36,14 @@ Precisam ser tomadas antes ou durante as fases indicadas. Cada decisão deve vir
 **Pronto quando:** `npm run lint`, `npm run format:check` e `npm run typecheck` passam limpos.
 
 ## Fase 2 — Rede de segurança: testes de caracterização
-- [ ] Salvar **fixtures** de HTML real, com dados pessoais removidos: página inicial do discente, página de turma com avaliações, turma sem avaliações, tela de login (sessão expirada) [A2].
-- [ ] Vitest + jsdom. Testes de `parseTurmas`, `parseAtividadesHome`, `parseAvaliacoesTurma`, `juntar`, `parametrosLinkJsf`.
-- [ ] Testes de `gerarIcs`: conteúdo esperado (snapshot) e validação com uma biblioteca iCalendar (ex.: `ical.js`) para garantir que o arquivo é lido sem erro.
-- [ ] Casos de borda: virada de ano no semestre [D5], item sem horário, tarefa, acentos/encoding [D6], títulos repetidos [D1].
-- [ ] Testes do background com `chrome` simulado (ex.: `sinon-chrome` ou mock próprio): entrega só à aba certa, expiração, limpeza ao fechar a aba.
-- [ ] Os testes que expõem bugs conhecidos (D1, D2) entram marcados como `todo`/`fails` até a fase 3.
+- [x] Salvar **fixtures** de HTML real, com dados pessoais removidos: página inicial do discente, página de turma com avaliações, turma sem avaliações, tela de login (sessão expirada) [A2]. *Em `tests/fixtures/sigaa/`, em UTF-8 e fora do Prettier. Ainda não há página real de turma sem avaliações: o caso é testado esvaziando o quadro da página real.*
+- [x] Vitest + jsdom. Testes de `parseTurmas`, `parseAtividadesHome`, `parseAvaliacoesTurma`, `juntar`, `parametrosLinkJsf`.
+- [x] Testes de `gerarIcs`: conteúdo esperado (snapshot) e validação com uma biblioteca iCalendar (ex.: `ical.js`) para garantir que o arquivo é lido sem erro.
+- [x] Casos de borda: virada de ano no semestre [D5], item sem horário, tarefa, acentos/encoding [D6], títulos repetidos [D1]. *Feitos alterando a fixture real dentro do teste.*
+- [x] Testes do background com `chrome` simulado (ex.: `sinon-chrome` ou mock próprio): entrega só à aba certa, expiração, limpeza ao fechar a aba. *Mock próprio em `tests/apoio/chrome-falso.js`. A função injetada na página do Google (`anexarNoMundoPrincipal`) fica para a fase 4: o jsdom não tem `DataTransfer`.*
+- [x] Os testes que expõem bugs conhecidos (D1, D2) entram marcados como `todo`/`fails` até a fase 3. *Marcados com `it.fails`: D1 (2), D2 e D6.*
 
-**Pronto quando:** `npm test` roda em CI local, com cobertura do `parser.js` acima de ~90%.
+**Pronto quando:** `npm test` roda em CI local, com cobertura do `parser.js` acima de ~90%. *`npm run coverage` exige 90% no `parser.js`; em 2026-11-21: 100% das linhas, 98,5% dos ramos.*
 
 ## Fase 3 — Refatoração e correções
 Estrutura proposta:
